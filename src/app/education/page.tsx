@@ -1,13 +1,40 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
 import { bootcamps } from "@/content/site-content";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Education | TuskQtech",
+  title: "Education",
   description:
     "Review TuskQtech bootcamp tracks for frontend, backend, infrastructure, security, product, and applied AI.",
+  alternates: {
+    canonical: absoluteUrl("/education"),
+  },
+  openGraph: {
+    title: "Education | TuskQtech",
+    description:
+      "Review TuskQtech bootcamp tracks for frontend, backend, infrastructure, security, product, and applied AI.",
+    url: absoluteUrl("/education"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+        width: 1200,
+        height: 630,
+        alt: "TuskQtech education and bootcamps",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Education | TuskQtech",
+    description:
+      "Review TuskQtech bootcamp tracks for frontend, backend, infrastructure, security, product, and applied AI.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function EducationPage() {
@@ -44,12 +71,12 @@ export default function EducationPage() {
                 <p className="mt-2 font-mono text-sm text-on-surface">{bootcamp.cohort}</p>
               </div>
 
-              <a
+              <Link
                 href="/contact#admissions"
                 className="mt-7 block w-full border border-[rgba(255,170,23,0.45)] py-3 text-center font-mono text-[11px] tracking-[0.16em] text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
               >
                 ENROLL NOW
-              </a>
+              </Link>
             </article>
           ))}
         </div>

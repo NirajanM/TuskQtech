@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Teko } from "next/font/google";
+
+import { absoluteUrl, siteConfig } from "@/lib/seo";
+
 import "./globals.css";
 
 const teko = Teko({
@@ -20,9 +23,62 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TuskQtech | Kinetic Monolith Framework",
-  description:
-    "TuskQtech merges industrial B2B engineering with high-energy technical education.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "TuskQtech | Kinetic Monolith Framework",
+    template: "%s | TuskQtech",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
+  alternates: {
+    canonical: absoluteUrl("/"),
+  },
+  openGraph: {
+    title: "TuskQtech | Kinetic Monolith Framework",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+        width: 1200,
+        height: 630,
+        alt: "TuskQtech Kinetic Monolith interface preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TuskQtech | Kinetic Monolith Framework",
+    description: siteConfig.description,
+    creator: siteConfig.creator,
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
+  keywords: [
+    "TuskQtech",
+    "software development",
+    "technical education",
+    "cybersecurity",
+    "Next.js agency",
+    "bootcamp",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

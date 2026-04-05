@@ -3,11 +3,37 @@ import type { Metadata } from "next";
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
 import { services } from "@/content/site-content";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Services | TuskQtech",
+  title: "Services",
   description:
     "Explore TuskQtech engineering and consulting services across product, platform, cybersecurity, and modernization.",
+  alternates: {
+    canonical: absoluteUrl("/services"),
+  },
+  openGraph: {
+    title: "Services | TuskQtech",
+    description:
+      "Explore TuskQtech engineering and consulting services across product, platform, cybersecurity, and modernization.",
+    url: absoluteUrl("/services"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+        width: 1200,
+        height: 630,
+        alt: "TuskQtech services overview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | TuskQtech",
+    description:
+      "Explore TuskQtech engineering and consulting services across product, platform, cybersecurity, and modernization.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function ServicesPage() {

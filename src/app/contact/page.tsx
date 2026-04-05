@@ -1,12 +1,39 @@
 import type { Metadata } from "next";
 
+import { ContactBriefForm } from "@/components/contact-brief-form";
 import { SiteLayout } from "@/components/site-layout";
 import { contactChannels } from "@/content/site-content";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact | TuskQtech",
+  title: "Contact",
   description:
     "Contact TuskQtech for enterprise projects, bootcamp admissions, and technical collaboration.",
+  alternates: {
+    canonical: absoluteUrl("/contact"),
+  },
+  openGraph: {
+    title: "Contact | TuskQtech",
+    description:
+      "Contact TuskQtech for enterprise projects, bootcamp admissions, and technical collaboration.",
+    url: absoluteUrl("/contact"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+        width: 1200,
+        height: 630,
+        alt: "Contact TuskQtech",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | TuskQtech",
+    description:
+      "Contact TuskQtech for enterprise projects, bootcamp admissions, and technical collaboration.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function ContactPage() {
@@ -34,53 +61,7 @@ export default function ContactPage() {
           <div id="project-brief" className="tech-card bg-surface p-8 sm:p-10">
             <p className="font-mono text-[10px] tracking-[0.18em] text-primary">PROJECT BRIEF</p>
             <h2 className="font-headline mt-3 text-5xl">Start a Project</h2>
-
-            <form className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2" action="#" method="post">
-              <label className="sm:col-span-1">
-                <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">FULL NAME</span>
-                <input
-                  type="text"
-                  name="name"
-                  className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
-                />
-              </label>
-
-              <label className="sm:col-span-1">
-                <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">WORK EMAIL</span>
-                <input
-                  type="email"
-                  name="email"
-                  className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
-                />
-              </label>
-
-              <label className="sm:col-span-2">
-                <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">PROJECT TYPE</span>
-                <input
-                  type="text"
-                  name="projectType"
-                  className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
-                />
-              </label>
-
-              <label className="sm:col-span-2">
-                <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">SCOPE DETAILS</span>
-                <textarea
-                  name="scope"
-                  rows={4}
-                  className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
-                />
-              </label>
-
-              <div className="sm:col-span-2 mt-4">
-                <button
-                  type="submit"
-                  className="cta-gradient px-8 py-3 text-[11px] font-semibold tracking-[0.18em] text-on-primary"
-                >
-                  SUBMIT BRIEF
-                </button>
-              </div>
-            </form>
+            <ContactBriefForm />
           </div>
 
           <div className="grid grid-cols-1 gap-6">

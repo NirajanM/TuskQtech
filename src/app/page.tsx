@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
@@ -11,6 +12,38 @@ import {
   services,
   bootcamps,
 } from "@/content/site-content";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Kinetic Monolith Framework",
+  description:
+    "TuskQtech homepage for enterprise software delivery and technical education through the Kinetic Monolith framework.",
+  alternates: {
+    canonical: absoluteUrl("/"),
+  },
+  openGraph: {
+    title: "TuskQtech | Kinetic Monolith Framework",
+    description:
+      "Explore TuskQtech services, education tracks, and the Kinetic Monolith execution model.",
+    url: absoluteUrl("/"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+        width: 1200,
+        height: 630,
+        alt: "TuskQtech Kinetic Monolith interface preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TuskQtech | Kinetic Monolith Framework",
+    description:
+      "Explore TuskQtech services, education tracks, and the Kinetic Monolith execution model.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
+};
 
 export default function HomePage() {
   return (
