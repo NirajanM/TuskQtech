@@ -71,18 +71,32 @@ export function ContactBriefForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          formType: "project-brief",
+          sourcePath: window.location.pathname,
+          sourceUrl: window.location.href,
+          submittedAt: new Date().toISOString(),
+        }),
       });
 
-      const body = (await response.json()) as {
-        ok?: boolean;
-        message?: string;
-        errors?: string[];
-      };
+      const contentType = response.headers.get("content-type") ?? "";
+      const isJsonResponse = contentType.includes("application/json");
+      const body = isJsonResponse
+        ? ((await response.json()) as {
+            ok?: boolean;
+            message?: string;
+            errors?: string[];
+          })
+        : undefined;
 
-      if (!response.ok || !body.ok) {
+      if (!response.ok || !body?.ok) {
         setStatus("error");
-        setMessage(body.errors?.[0] ?? body.message ?? "Failed to submit brief.");
+        setMessage(
+          body?.errors?.[0] ??
+            body?.message ??
+            "Submission failed. Please reload once and try again.",
+        );
         return;
       }
 
@@ -162,7 +176,7 @@ export function ContactBriefForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="cta-gradient px-8 py-3 text-[11px] font-semibold tracking-[0.18em] text-on-primary disabled:cursor-not-allowed disabled:opacity-60"
+          className="btn-primary rounded-sm px-8 py-3 text-[11px] font-semibold tracking-[0.18em] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "loading" ? "SUBMITTING..." : "SUBMIT BRIEF"}
         </button>

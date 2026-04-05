@@ -35,6 +35,22 @@ export type Pillar = {
   imageAlt: string;
 };
 
+export type HeroTrack = {
+  key: string;
+  title: string;
+  description: string;
+  href: string;
+};
+
+export type NextStep = {
+  key: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  href: string;
+  cta: string;
+};
+
 export const siteName = "TuskQtech";
 
 export const navItems: NavItem[] = [
@@ -58,6 +74,57 @@ export const hero = {
     { label: "Join Bootcamp", href: "/education", variant: "secondary" as const },
   ],
 };
+
+export const heroTracks: HeroTrack[] = [
+  {
+    key: "academy",
+    title: "Academy",
+    description: "Cohort-based learning paths with real project pressure and mentorship.",
+    href: "/education",
+  },
+  {
+    key: "engineering",
+    title: "Engineering",
+    description: "Production delivery across product, platform, and security workflows.",
+    href: "/services",
+  },
+  {
+    key: "residency",
+    title: "Residency",
+    description: "Intensive builder-style sprint culture for rapid execution and outcomes.",
+    href: "/contact#career-intake",
+  },
+];
+
+export const nextSteps: NextStep[] = [
+  {
+    key: "academy",
+    title: "Academy",
+    subtitle: "Join the Academy",
+    description:
+      "Master frontend, backend, security, and AI with guided projects and cohort mentorship.",
+    href: "/education",
+    cta: "Start Learning",
+  },
+  {
+    key: "engineering",
+    title: "Engineering",
+    subtitle: "Work With Our Team",
+    description:
+      "Turn ideas into production systems with full-stack execution and performance-first delivery.",
+    href: "/services",
+    cta: "Ship Your Product",
+  },
+  {
+    key: "residency",
+    title: "Residency",
+    subtitle: "Career Intake",
+    description:
+      "Collaborate with high-intent builders and join an execution culture designed to ship weekly.",
+    href: "/contact#career-intake",
+    cta: "Apply Now",
+  },
+];
 
 export const metrics: Metric[] = [
   { value: "99%", label: "Success Rate", accent: "primary" },

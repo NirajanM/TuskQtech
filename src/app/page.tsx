@@ -6,6 +6,8 @@ import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
 import {
   hero,
+  heroTracks,
+  nextSteps,
   metrics,
   partnerWords,
   pillars,
@@ -15,7 +17,7 @@ import {
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Kinetic Monolith Framework",
+  title: "TuskQtech",
   description:
     "TuskQtech homepage for enterprise software delivery and technical education through the Kinetic Monolith framework.",
   alternates: {
@@ -50,6 +52,7 @@ export default function HomePage() {
     <SiteLayout>
       <section className="mesh-grain relative min-h-[calc(100vh-80px)] px-5 py-20 sm:px-8 lg:px-12">
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(153,247,255,0.08),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(255,170,23,0.08),transparent_40%)]" />
 
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           <div className="fade-in-up lg:col-span-7">
@@ -81,7 +84,7 @@ export default function HomePage() {
                   href={action.href}
                   className={
                     action.variant === "primary"
-                      ? "ambient-glow-cyan cta-gradient px-7 py-4 text-[11px] font-semibold tracking-[0.2em] text-on-primary transition-transform hover:-translate-y-0.5"
+                      ? "ambient-glow-cyan btn-primary rounded-sm px-7 py-4 text-[11px] font-semibold tracking-[0.2em] transition-transform hover:-translate-y-0.5"
                       : "ambient-glow-amber bg-secondary px-7 py-4 text-[11px] font-semibold tracking-[0.2em] text-on-secondary transition-transform hover:-translate-y-0.5"
                   }
                 >
@@ -89,10 +92,26 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {heroTracks.map((track) => (
+                <Link
+                  key={track.key}
+                  href={track.href}
+                  className="group rounded-sm border border-[rgba(153,247,255,0.14)] bg-[rgba(12,14,19,0.6)] p-4 transition-all hover:border-primary/40 hover:bg-[rgba(17,19,24,0.9)]"
+                >
+                  <p className="font-headline text-3xl leading-none text-on-surface">{track.title}</p>
+                  <p className="mt-2 text-sm text-on-surface-soft">{track.description}</p>
+                  <p className="mt-3 font-mono text-[10px] tracking-[0.16em] text-primary">
+                    OPEN TRACK -&gt;
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="fade-in-up fade-delay-3 lg:col-span-5 lg:pl-8">
-            <div className="relative min-h-[420px] w-full overflow-hidden bg-surface-low sm:min-h-[520px]">
+            <div className="float-y relative min-h-[420px] w-full overflow-hidden rounded-md border border-[rgba(153,247,255,0.22)] bg-surface-low sm:min-h-[520px]">
               <Image
                 src={hero.image}
                 alt={hero.imageAlt}
@@ -130,10 +149,14 @@ export default function HomePage() {
           </div>
 
           <div className="mt-20 grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_auto]">
-            <div className="grid grid-cols-2 gap-6 font-headline text-3xl text-on-surface-soft opacity-65 sm:grid-cols-5 sm:text-4xl">
-              {partnerWords.map((word) => (
-                <span key={word}>{word}</span>
-              ))}
+            <div className="marquee py-1">
+              <div className="marquee-track font-headline text-3xl text-on-surface-soft/80 sm:text-4xl">
+                {[...partnerWords, ...partnerWords].map((word, index) => (
+                  <span key={`${word}-${index}`} className="rounded-sm border border-[rgba(116,117,123,0.25)] px-4 py-2">
+                    {word}
+                  </span>
+                ))}
+              </div>
             </div>
             <Image
               src="/logo-suite.png"
@@ -268,6 +291,33 @@ export default function HomePage() {
             >
               VIEW ALL BOOTCAMPS
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-28 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <p className="font-mono text-[10px] tracking-[0.28em] text-primary">NEXT STEP MATRIX</p>
+          <h2 className="font-headline mt-3 text-6xl sm:text-7xl">CHOOSE YOUR NEXT STEP</h2>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {nextSteps.map((step) => (
+              <Link
+                key={step.key}
+                href={step.href}
+                className="group relative overflow-hidden rounded-sm border border-[rgba(116,117,123,0.24)] bg-surface p-8 transition-all hover:-translate-y-1 hover:border-primary/45"
+              >
+                <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-primary/10 blur-2xl transition-all group-hover:bg-primary/20" />
+                <p className="font-headline text-4xl text-secondary">{step.title}</p>
+                <p className="mt-2 font-mono text-[10px] tracking-[0.16em] text-on-surface-soft">
+                  {step.subtitle.toUpperCase()}
+                </p>
+                <p className="mt-4 min-h-[72px] text-on-surface-soft">{step.description}</p>
+                <p className="mt-6 font-mono text-[11px] tracking-[0.16em] text-primary">
+                  {step.cta.toUpperCase()} -&gt;
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

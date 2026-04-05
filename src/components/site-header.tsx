@@ -9,10 +9,10 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ ctaLabel = "Contact Us" }: SiteHeaderProps) {
   return (
-    <header className="fixed top-0 z-50 w-full bg-[rgba(41,44,51,0.6)] backdrop-blur-[20px] ambient-glow-cyan">
+    <header className="fixed top-0 z-50 w-full border-b border-[rgba(153,247,255,0.14)] bg-[rgba(8,11,16,0.86)] backdrop-blur-[20px] ambient-glow-cyan">
       <nav className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <div className="fade-in-up">
-          <Link href="/" className="inline-flex items-center" aria-label="TuskQtech home">
+          <Link href="/" className="logo-shell inline-flex items-center rounded-md px-2 py-1" aria-label="TuskQtech home">
             <Image
               src="/logo.png"
               alt="TuskQtech logo"
@@ -34,7 +34,7 @@ export function SiteHeader({ ctaLabel = "Contact Us" }: SiteHeaderProps) {
 
         <Link
           href="/contact"
-          className="bg-surface-highest px-4 py-2 text-[10px] font-semibold tracking-[0.18em] text-primary transition-all hover:bg-primary hover:text-on-primary"
+          className="btn-primary rounded-sm px-4 py-2 text-[10px] font-semibold tracking-[0.18em] transition-all"
         >
           {ctaLabel.toUpperCase()}
         </Link>

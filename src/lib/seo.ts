@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "TuskQtech merges industrial B2B engineering and high-energy technical education through its Kinetic Monolith framework.",
   url: "https://tuskqtech.vercel.app",
-  ogImage: "/og-image.png",
+  ogImage: "/opengraph-image",
   locale: "en_US",
   creator: "@tuskqtech",
 } as const;

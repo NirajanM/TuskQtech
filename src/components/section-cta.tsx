@@ -28,7 +28,7 @@ export function SectionCta() {
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "cta-gradient px-10 py-4 text-[11px] font-semibold tracking-[0.18em] text-on-primary"
+                  ? "btn-primary rounded-sm px-10 py-4 text-[11px] font-semibold tracking-[0.18em]"
                   : "border border-[rgba(70,72,77,0.4)] px-10 py-4 text-[11px] font-semibold tracking-[0.18em] text-on-surface transition-colors hover:bg-surface-high"
               }
             >

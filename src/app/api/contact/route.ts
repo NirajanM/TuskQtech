@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
 type ContactPayload = {
@@ -5,6 +6,10 @@ type ContactPayload = {
   email: string;
   projectType: string;
   scope: string;
+  formType?: string;
+  sourcePath?: string;
+  sourceUrl?: string;
+  submittedAt?: string;
 };
 
 const MAX_TEXT_LENGTH = 2000;
@@ -68,6 +73,10 @@ export async function POST(request: Request) {
     email: trimField((body as Record<string, unknown>)?.email),
     projectType: trimField((body as Record<string, unknown>)?.projectType),
     scope: trimField((body as Record<string, unknown>)?.scope),
+    formType: trimField((body as Record<string, unknown>)?.formType) || "project-brief",
+    sourcePath: trimField((body as Record<string, unknown>)?.sourcePath),
+    sourceUrl: trimField((body as Record<string, unknown>)?.sourceUrl),
+    submittedAt: trimField((body as Record<string, unknown>)?.submittedAt),
   };
 
   const errors = validatePayload(payload);
@@ -79,16 +88,40 @@ export async function POST(request: Request) {
     );
   }
 
+  const requestHeaders = await headers();
+  const forwardedFor = requestHeaders.get("x-forwarded-for") ?? "unknown";
+  const userAgent = requestHeaders.get("user-agent") ?? "unknown";
+  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "unknown";
+  const origin = requestHeaders.get("origin") ?? "unknown";
+
+  const submittedAt = payload.submittedAt || new Date().toISOString();
+
   const embed = {
-    title: "New TuskQtech Project Brief",
+    title: "New TuskQtech Contact Submission",
     color: 0x99f7ff,
     fields: [
+      { name: "Form Type", value: payload.formType ?? "project-brief", inline: true },
+      { name: "Submitted At", value: submittedAt, inline: true },
       { name: "Name", value: payload.name, inline: true },
       { name: "Email", value: payload.email, inline: true },
       { name: "Project Type", value: payload.projectType, inline: false },
       {
         name: "Scope Details",
         value: payload.scope.length > 1024 ? `${payload.scope.slice(0, 1020)}...` : payload.scope,
+        inline: false,
+      },
+      { name: "Source Path", value: payload.sourcePath || "unknown", inline: true },
+      { name: "Source URL", value: payload.sourceUrl || "unknown", inline: false },
+      { name: "Origin Host", value: host, inline: true },
+      { name: "Origin Header", value: origin, inline: true },
+      {
+        name: "Client IP",
+        value: forwardedFor.split(",")[0]?.trim() || "unknown",
+        inline: true,
+      },
+      {
+        name: "User Agent",
+        value: userAgent.length > 1024 ? `${userAgent.slice(0, 1020)}...` : userAgent,
         inline: false,
       },
     ],
@@ -102,7 +135,7 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        content: "New inbound project brief from website.",
+        content: "Inbound submission from tuskqtech.vercel.app",
         allowed_mentions: {
           parse: [],
         },
@@ -112,16 +145,27 @@ export async function POST(request: Request) {
     });
 
     if (!discordResponse.ok) {
+      const errorText = await discordResponse.text();
+
       return NextResponse.json(
-        { ok: false, message: "Failed to forward message to Discord." },
+        {
+          ok: false,
+          message: "Failed to forward message to Discord.",
+          discordStatus: discordResponse.status,
+          discordError: errorText.slice(0, 300),
+        },
         { status: 502 },
       );
     }
 
     return NextResponse.json({ ok: true, message: "Brief submitted successfully." });
-  } catch {
+  } catch (error) {
     return NextResponse.json(
-      { ok: false, message: "Unexpected error while sending to Discord." },
+      {
+        ok: false,
+        message: "Unexpected error while sending to Discord.",
+        error: error instanceof Error ? error.message : "unknown-error",
+      },
       { status: 500 },
     );
   }

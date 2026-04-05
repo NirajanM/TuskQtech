@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ContactBriefForm } from "@/components/contact-brief-form";
+import { ContactIntentForm } from "@/components/contact-intent-form";
 import { SiteLayout } from "@/components/site-layout";
 import { contactChannels } from "@/content/site-content";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
@@ -71,12 +72,13 @@ export default function ContactPage() {
               <p className="mt-3 text-on-surface-soft">
                 Tell us your background and target role. We will match you with the right cohort.
               </p>
-              <a
-                href="mailto:academy@tuskqtech.com"
-                className="mt-6 inline-flex border border-[rgba(255,170,23,0.45)] px-5 py-2 text-[11px] tracking-[0.16em] text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
-              >
-                EMAIL ADMISSIONS
-              </a>
+              <ContactIntentForm
+                formType="admissions"
+                projectType="Bootcamp Admissions"
+                detailsLabel="Learning Goals"
+                detailsPlaceholder="Tell us your background and what you want to learn."
+                buttonLabel="Send Admissions Request"
+              />
             </div>
 
             <div id="career-intake" className="bg-surface p-8">
@@ -85,12 +87,13 @@ export default function ContactPage() {
               <p className="mt-3 text-on-surface-soft">
                 We recruit engineers, designers, and instructors with strong technical execution.
               </p>
-              <a
-                href="mailto:careers@tuskqtech.com"
-                className="mt-6 inline-flex border border-[rgba(70,72,77,0.45)] px-5 py-2 text-[11px] tracking-[0.16em] text-on-surface transition-colors hover:bg-surface-high"
-              >
-                SEND PROFILE
-              </a>
+              <ContactIntentForm
+                formType="career-intake"
+                projectType="Career Intake"
+                detailsLabel="Role and Experience"
+                detailsPlaceholder="Share your role, stack, and links to portfolio/GitHub."
+                buttonLabel="Send Career Intake"
+              />
             </div>
 
             <div className="bg-surface-low p-8">
