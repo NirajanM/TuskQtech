@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0e13;
+  --surface-low: #111318;
+  --surface: #171a1f;
+  --surface-high: #1d2026;
+  --surface-highest: #23262d;
+  --surface-bright: #292c33;
+  --primary: #99f7ff;
+  --primary-strong: #00f1fe;
+  --secondary: #ffaa17;
+  --outline: #74757b;
+  --outline-ghost: #46484d;
+  --on-surface: #f6f6fd;
+  --on-surface-soft: #aaabb1;
+  --on-primary: #005f64;
+  --on-secondary: #513200;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface-low: var(--surface-low);
+  --color-surface: var(--surface);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+  --color-surface-bright: var(--surface-bright);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-secondary: var(--secondary);
+  --color-outline: var(--outline);
+  --color-outline-ghost: var(--outline-ghost);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-soft: var(--on-surface-soft);
+  --color-on-primary: var(--on-primary);
+  --color-on-secondary: var(--on-secondary);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--on-surface);
+  font-family: var(--font-inter), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-headline {
+  font-family: var(--font-teko), sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+.page-atmosphere {
+  background:
+    radial-gradient(150% 120% at 100% 0%, rgba(153, 247, 255, 0.09) 0%, rgba(153, 247, 255, 0) 55%),
+    radial-gradient(120% 100% at 0% 100%, rgba(255, 170, 23, 0.11) 0%, rgba(255, 170, 23, 0) 55%),
+    linear-gradient(180deg, #0c0e13 0%, #0f1218 55%, #0c0e13 100%);
+}
+
+.mesh-grain {
+  background-image:
+    radial-gradient(circle at 2px 2px, rgba(153, 247, 255, 0.06) 1px, transparent 0),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 36px 36px, 120px 120px;
+}
+
+.ambient-glow-cyan {
+  box-shadow: 0 40px 40px -10px rgba(0, 0, 0, 0.4), 0 0 32px rgba(153, 247, 255, 0.12);
+}
+
+.ambient-glow-amber {
+  box-shadow: 0 40px 40px -10px rgba(0, 0, 0, 0.4), 0 0 32px rgba(255, 170, 23, 0.16);
+}
+
+.tech-card {
+  position: relative;
+}
+
+.tech-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 4px;
+  height: 64px;
+  background: var(--secondary);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.24s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    animation: none;
+  }
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+}
