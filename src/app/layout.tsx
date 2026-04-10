@@ -1,31 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Teko } from "next/font/google";
+import Script from "next/script";
+import { Manrope } from "next/font/google";
 
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 import "./globals.css";
 
-const teko = Teko({
-  variable: "--font-teko",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
+const themeInitScript = `
+(() => {
+  try {
+    const storedTheme = window.localStorage.getItem("tuskq-theme");
+    const nextTheme = storedTheme === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = nextTheme;
+  } catch {
+    document.documentElement.dataset.theme = "light";
+  }
+})();
+`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "TuskQtech | Kinetic Monolith Framework",
+    default: "TuskQtech | Engineering Authority for the Digital Era",
     template: "%s | TuskQtech",
   },
   description: siteConfig.description,
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "TuskQtech | Kinetic Monolith Framework",
+    title: "TuskQtech | Engineering Authority for the Digital Era",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -49,13 +50,13 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech Kinetic Monolith interface preview",
+        alt: "TuskQtech Home",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TuskQtech | Kinetic Monolith Framework",
+    title: "TuskQtech | Engineering Authority for the Digital Era",
     description: siteConfig.description,
     creator: siteConfig.creator,
     images: [absoluteUrl(siteConfig.ogImage)],
@@ -89,8 +90,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${teko.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      data-theme="light"
+      suppressHydrationWarning
+      className={`${manrope.variable} h-full antialiased`}
     >
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

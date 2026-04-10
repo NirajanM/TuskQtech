@@ -1,40 +1,54 @@
-import Image from "next/image";
 import Link from "next/link";
 
-import { cta } from "@/content/site-content";
+import { contactChannels } from "@/content/site-content";
 
 export function SectionCta() {
+  const email = contactChannels.find((channel) => channel.title === "Email")?.details ?? "contact@tuskqtech.com";
+  const phone = contactChannels.find((channel) => channel.title === "Phone")?.details ?? "+977 98000 00000";
+  const location = contactChannels.find((channel) => channel.title === "Location")?.details ?? "Nepal";
+
   return (
-    <section className="relative px-5 py-32 sm:px-8 lg:px-12">
-      <div className="absolute inset-0">
-        <Image src={cta.image} alt={cta.imageAlt} fill className="object-cover opacity-18" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(12,14,19,0.75)] via-[rgba(12,14,19,0.86)] to-background" />
-      </div>
+    <section className="bg-surface px-8 py-32" data-reveal>
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-20 rounded-xl bg-surface-container p-12 md:grid-cols-2 md:p-20">
+        <div data-reveal data-reveal-delay="1">
+          <h2 className="section-title mb-8 text-4xl md:text-5xl">Let’s Build the Future Together</h2>
+          <p className="mb-12 max-w-[52ch] text-lg text-on-surface-variant">
+            Ready to elevate your digital presence? Our experts are standing by to architect your next
+            breakthrough.
+          </p>
 
-      <div className="relative mx-auto w-full max-w-[1100px] text-center">
-        <h2 className="font-headline text-6xl leading-[0.9] sm:text-7xl md:text-8xl">
-          {cta.headingTop}
-          <br />
-          <span className="bg-gradient-to-br from-primary to-primary-strong bg-clip-text text-transparent">
-            {cta.headingBottom}
-          </span>
-        </h2>
-        <p className="mx-auto mt-8 max-w-[62ch] text-on-surface-soft">{cta.body}</p>
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <span className="text-primary">✉</span>
+              <span className="font-medium">{email}</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-primary">☎</span>
+              <span className="font-medium">{phone}</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-primary">⌂</span>
+              <span className="font-medium">{location}</span>
+            </div>
+          </div>
+        </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          {cta.actions.map((action) => (
-            <Link
-              key={action.href}
-              href={action.href}
-              className={
-                action.variant === "primary"
-                  ? "btn-primary rounded-sm px-10 py-4 text-[11px] font-semibold tracking-[0.18em]"
-                  : "border border-[rgba(70,72,77,0.4)] px-10 py-4 text-[11px] font-semibold tracking-[0.18em] text-on-surface transition-colors hover:bg-surface-high"
-              }
-            >
-              {action.label.toUpperCase()}
+        <div className="space-y-5" data-reveal data-reveal-delay="2">
+          <p className="text-sm leading-relaxed text-on-surface-variant">
+            Share your requirements through the dedicated page so submissions are tracked and routed
+            correctly.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/contact#project-brief" className="btn-primary px-6 py-3 text-sm">
+              Project Brief
             </Link>
-          ))}
+            <Link href="/contact#admissions" className="btn-secondary px-6 py-3 text-sm">
+              Admissions
+            </Link>
+            <Link href="/contact#career-intake" className="btn-secondary px-6 py-3 text-sm">
+              Career Intake
+            </Link>
+          </div>
         </div>
       </div>
     </section>

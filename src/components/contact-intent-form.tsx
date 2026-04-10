@@ -96,7 +96,7 @@ export function ContactIntentForm({
       }
 
       setStatus("success");
-      setMessage("Submitted. We will get back to you shortly.");
+      setMessage("Message sent. We will get back to you shortly.");
       setFormData(initialFormState);
     } catch {
       setStatus("error");
@@ -105,9 +105,9 @@ export function ContactIntentForm({
   }
 
   return (
-    <form className="mt-5 space-y-4" onSubmit={onSubmit} noValidate>
-      <label className="block">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">NAME</span>
+    <form className="space-y-6" onSubmit={onSubmit} noValidate>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">Name</label>
         <input
           type="text"
           value={formData.name}
@@ -116,12 +116,13 @@ export function ContactIntentForm({
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, name: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
+          className="form-input"
+          placeholder="Your name"
         />
-      </label>
+      </div>
 
-      <label className="block">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">EMAIL</span>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">Email</label>
         <input
           type="email"
           value={formData.email}
@@ -129,16 +130,15 @@ export function ContactIntentForm({
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, email: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
+          className="form-input"
+          placeholder="you@company.com"
         />
-      </label>
+      </div>
 
-      <label className="block">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">
-          {detailsLabel.toUpperCase()}
-        </span>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">{detailsLabel}</label>
         <textarea
-          rows={3}
+          rows={4}
           value={formData.details}
           required
           minLength={10}
@@ -146,25 +146,17 @@ export function ContactIntentForm({
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, details: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b border-outline bg-transparent py-2 text-sm outline-none placeholder:text-on-surface-soft focus:border-primary"
+          className="form-input"
         />
-      </label>
-
-      <div className="flex flex-col gap-2">
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="btn-primary rounded-sm px-5 py-2 text-[11px] font-semibold tracking-[0.16em] disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {status === "loading" ? "SUBMITTING..." : buttonLabel.toUpperCase()}
-        </button>
-
-        {status !== "idle" ? (
-          <p className={`text-xs ${status === "error" ? "text-[#ff8d89]" : "text-primary"}`}>
-            {message}
-          </p>
-        ) : null}
       </div>
+
+      <button type="submit" disabled={status === "loading"} className="btn-primary w-full py-4 text-base disabled:opacity-60">
+        {status === "loading" ? "Submitting..." : buttonLabel}
+      </button>
+
+      {status !== "idle" ? (
+        <p className={`text-sm ${status === "error" ? "text-danger" : "text-primary"}`}>{message}</p>
+      ) : null}
     </form>
   );
 }

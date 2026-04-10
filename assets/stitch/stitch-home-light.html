@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TuskQtech | Engineering Authority for the Digital Era</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0056B3",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#004494",
+                        "on-primary-container": "#e0edff",
+                        "secondary": "#003366",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#004080",
+                        "on-secondary-container": "#d6e2ff",
+                        "surface": "#ffffff",
+                        "on-surface": "#1c1b21",
+                        "surface-variant": "#f1f3f5",
+                        "on-surface-variant": "#495057",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8f9fa",
+                        "surface-container": "#e9ecef",
+                        "surface-container-high": "#dee2e6",
+                        "surface-container-highest": "#ced4da",
+                        "outline": "#787582",
+                        "outline-variant": "#adb5bd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0056B3 0%, #003366 100%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-surface-container">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<img alt="TuskQtech logo" class="h-8 w-auto" data-alt="clean minimalist logo for a tech agency featuring geometric shapes and professional typography in corporate blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtXI6CQGlQ83DksLEn6OBPP1ZCG64fH2bDZACrpVZtxXbk_IIp5oaOJ3ZGyS1XgT5xV8xBy4DMPWFExrI_FYpZuprKcr4lzLAzreDHlGZ1HfL7kl-7jhBZLCVIRumb-g8Ek-UzDc-oj9-9Q9Mbhj1n4tcnH0sO-CbnD6ahWvMLm4J6oNhrPcn6xYFxAwV0vo2HTdY7koPZBBG6OdqnAErD74P3iyaPsM8Jb5AIhMx8k0ulNQe7k_ebNnWIaezGbZVcGPowBxu9a08"/>
+<span class="text-xl font-bold tracking-tighter text-[#1c1b21]">TuskQtech</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-medium tracking-tight">
+<a class="text-primary border-b-2 border-primary pb-1 hover:text-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95" href="#">Why Choose Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95" href="#">Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95" href="#">Contact</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-semibold tracking-tight hover:bg-primary transition-all duration-200 hover:translate-y-[-1px] active:scale-95">
+            Get Started
+        </button>
+</div>
+</nav>
+<main>
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-primary/5"></div>
+<img alt="Hero background" class="w-full h-full object-cover opacity-15 grayscale" data-alt="high-tech architectural visualization of a futuristic data center with professional blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtGKf7djPbVAhdl1nI8JA16L0dSbfz0TP8mksqxCW2a5IRT6XGwIgPn6FoNUbRazpdDkD0Hk4ZNCUSJ6u-1X3JJPAFs4W1K6FGiN2OFRXIc8xSOuUeCdkK8TR9iaKzo4ahBrQwKuOl8tLLIQtZlXrOFgOd06ATJC8HPgWc8fCeiODpTZyfIlI-y9YbUfh2-TRdva2c4XOpIY6tNCMMaaaPkdpDQG3yFKmJqQrwXPMqA8_pIxGjBsvvtAG4jbKlkpAAg_5AIWD_tcMD"/>
+</div>
+<div class="max-w-7xl mx-auto px-8 w-full relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-on-surface leading-[0.9] mb-8">
+                    Engineering the Future of Digital Innovation
+                </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10">
+                    We design, build, and scale powerful digital products that empower businesses to thrive in a rapidly evolving technological landscape.
+                </p>
+<div class="flex gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded font-bold hover:bg-primary transition-all">Start Your Project</button>
+<button class="px-8 py-4 rounded font-bold border border-outline-variant hover:bg-surface-container-low transition-all">View Our Work</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div>
+<span class="text-primary font-bold tracking-widest text-sm uppercase mb-4 block">Our Philosophy</span>
+<h2 class="text-4xl md:text-5xl font-black tracking-tight text-on-surface mb-8">Driven by Innovation. Defined by Excellence.</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+                    TuskQTech operates at the intersection of technical mastery and creative vision. We don't just build software; we engineer authority. Our team serves as a high-velocity extension of your business, delivering digital infrastructure that is as robust as it is intuitive.
+                </p>
+<div class="grid grid-cols-2 gap-8 mt-12">
+<div>
+<div class="text-4xl font-bold text-primary mb-2">120+</div>
+<div class="text-sm text-on-surface-variant font-medium">Enterprise Solutions Delivered</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">98%</div>
+<div class="text-sm text-on-surface-variant font-medium">Client Retention Rate</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-surface-container-highest overflow-hidden rounded-xl">
+<img alt="Professional team workspace" class="w-full h-full object-cover" data-alt="minimalist architectural office with clean white desks and focused professionals collaborating on digital blueprints and code" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK-bXUA5l1gq0fKlwdgochhEMd1dFVifRZIZQQapCcbzyiio_WjbLKvOzscZtHnP3-89rTBSEVl2RJw4gSipmqWgrZAKLqb1RL0NTGjC_ZkrjEQb735rjm8VwrrcRhgAm4xdJ20C3Eo8QgdQWiTtqmMZdXMMEFlMl7fDSkvhNT_-hZROi2v7CZF6xUTooYsLhCUS46IEbhbQlOoARyJ8n3CjNvN9baFf5t4JzOm0-3jQCZMpyhsVucJ7CAmqyQUGB4np_E3fb5C9py"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary text-on-secondary p-8 rounded-lg shadow-2xl max-w-xs">
+<p class="italic font-medium">"Their technical precision is matched only by their commitment to our long-term growth."</p>
+<p class="mt-4 text-sm opacity-80">— CTO, Global FinTech</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="text-4xl font-black tracking-tight text-on-surface">Core Solutions</h2>
+<div class="h-1 w-20 bg-primary mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">code</span>
+<h3 class="text-2xl font-bold mb-4">Web Development</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">Building high-performance, scalable web architectures using modern frameworks that prioritize speed and security.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">smartphone</span>
+<h3 class="text-2xl font-bold mb-4">App Development</h3>
+<p class="text-on-surface-variant">Native and cross-platform mobile experiences that engage users and drive conversion.</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">palette</span>
+<h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+<p class="text-on-surface-variant">Sophisticated interface design backed by deep user research and behavioral psychology.</p>
+</div>
+<div class="md:col-span-2 bg-secondary text-on-secondary p-10 rounded-xl flex items-center justify-between overflow-hidden relative group">
+<div class="relative z-10">
+<h3 class="text-3xl font-black mb-4">Cloud &amp; DevOps</h3>
+<p class="text-on-secondary-container max-w-sm">Architecting resilient infrastructure that scales with your growth while maintaining zero downtime.</p>
+</div>
+<span class="material-symbols-outlined text-9xl absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">cloud</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl md:text-5xl font-black tracking-tight leading-tight">Your Competitive Advantage in Technology</h2>
+</div>
+<div class="text-on-surface-variant text-lg max-w-md">
+                    We don't just deliver code; we deliver strategic assets that redefine your market position.
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-1">
+<div class="bg-surface-container-lowest p-8 flex flex-col h-full border-r border-surface-container">
+<div class="text-primary font-black text-xl mb-4">01</div>
+<h4 class="font-bold mb-4">Performance</h4>
+<p class="text-sm text-on-surface-variant">Optimized for extreme speed and response times.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 flex flex-col h-full border-r border-surface-container">
+<div class="text-primary font-black text-xl mb-4">02</div>
+<h4 class="font-bold mb-4">Client-Centricity</h4>
+<p class="text-sm text-on-surface-variant">Deeply integrated partnerships at every stage.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 flex flex-col h-full border-r border-surface-container">
+<div class="text-primary font-black text-xl mb-4">03</div>
+<h4 class="font-bold mb-4">Innovation</h4>
+<p class="text-sm text-on-surface-variant">Cutting-edge R&amp;D applied to every project.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 flex flex-col h-full border-r border-surface-container">
+<div class="text-primary font-black text-xl mb-4">04</div>
+<h4 class="font-bold mb-4">Security</h4>
+<p class="text-sm text-on-surface-variant">Military-grade protocols and data integrity.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 flex flex-col h-full">
+<div class="text-primary font-black text-xl mb-4">05</div>
+<h4 class="font-bold mb-4">Agile Delivery</h4>
+<p class="text-sm text-on-surface-variant">Rapid iterations with measurable value.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-center mb-16">
+<h2 class="text-4xl font-black tracking-tight">Transforming Ideas into Reality</h2>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                    Explore Full Portfolio 
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] bg-surface-container overflow-hidden rounded-xl mb-6 relative">
+<img alt="Smart Business Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="sleek modern software dashboard with corporate blue accents displayed on a premium monitor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzGjpCWaQszEoohHxWlqgt8G1YwAPqwnjYu3N5vpcO6O_me_CBqDQ_4DilPlor_noPQqQuv05qDWiRIGz1ICN2FPeMtSOMr0ETMdMkoIAw4mJypOmWgs4sgnGQjvoLWxk7yOR1c7Y-RP-v2YdHKELMIPObzpULtoYXj8EDpO4d8WAAm2xz3FzGcaCUkAOaouRD9IgjJU3JSUCpV4NdYvHA9SP6fM3qD8S-dLdPc3yymUKLoZZ7SI5IGuNZH7kGqVSdFhu2VBg39qU9"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="text-2xl font-bold mb-2">Smart Business Dashboard</h3>
+<p class="text-on-surface-variant">A comprehensive analytics engine for real-time decision making.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] bg-surface-container overflow-hidden rounded-xl mb-6 relative">
+<img alt="E-Commerce Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="high-end luxury fashion e-commerce website on a tablet with smooth typography and corporate professional feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDchiR2pE-F-ENd5OMMRc-zT9AxQwQpyr7ZXTizJVduSGHDOclySa1q47MQeQ1TaBpZh4DqG2fRuEmGUlyZXQ0zODqtbVk3ek6blclftYz5W0GURDUKvye8_lIFmnDqwC5q2YOvRWx_61SxBjfysvFz_XkwHygxHhTWOMWbd7jxXfBR3D0VgDfJq73Az_0uEjxeU6h9JHfOSrE02YNYK68iz1uGFtohVg7Gsv0lir-C-y0GUL4Y2cM93nByyXOppwTiia2h4BJSX6Hy"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="text-2xl font-bold mb-2">E-Commerce Platform</h3>
+<p class="text-on-surface-variant">High-conversion retail infrastructure designed for global scale.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface-container">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-black mb-20 text-center">Execution Roadmap</h2>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+<div class="relative">
+<div class="w-12 h-12 bg-secondary text-on-secondary rounded-full flex items-center justify-center font-bold mb-6">1</div>
+<h4 class="font-bold mb-2">Discovery</h4>
+<p class="text-sm text-on-surface-variant">Deep dive into your business goals and technical constraints.</p>
+</div>
+<div class="relative">
+<div class="w-12 h-12 bg-surface-container-highest text-primary rounded-full flex items-center justify-center font-bold mb-6">2</div>
+<h4 class="font-bold mb-2">Design</h4>
+<p class="text-sm text-on-surface-variant">Architecting the user experience and visual identity.</p>
+</div>
+<div class="relative">
+<div class="w-12 h-12 bg-surface-container-highest text-primary rounded-full flex items-center justify-center font-bold mb-6">3</div>
+<h4 class="font-bold mb-2">Development</h4>
+<p class="text-sm text-on-surface-variant">Clean, modular code built for performance and scale.</p>
+</div>
+<div class="relative">
+<div class="w-12 h-12 bg-surface-container-highest text-primary rounded-full flex items-center justify-center font-bold mb-6">4</div>
+<h4 class="font-bold mb-2">Testing</h4>
+<p class="text-sm text-on-surface-variant">Rigorous quality assurance and security auditing.</p>
+</div>
+<div class="relative">
+<div class="w-12 h-12 bg-surface-container-highest text-primary rounded-full flex items-center justify-center font-bold mb-6">5</div>
+<h4 class="font-bold mb-2">Support</h4>
+<p class="text-sm text-on-surface-variant">Ongoing optimization and strategic evolution.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-black tracking-tight mb-4">The Minds Behind TuskQTech</h2>
+<p class="text-on-surface-variant">A collective of engineers, designers, and strategists.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden rounded-lg mb-4">
+<img alt="Team member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="professional portrait of a confident man in a dark suit with a neutral background, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDshU1rMEgI7oT8SnhKhhRNIFcc0lTWQOrXuEE1sgSxkGZUOp6M1Ov-2bTc7_rFCrc0gjlLdCtLejv4dPpUPXXx3-JKhkgGqKO9t_O6XK10DcL6MkFxXr_cdSext8VyzrCbQVMSabamfi13jujvy8Ax4qrIBDqgfvgSAI_fMGLE21996ZSa2Nj5m0AkUjjGOnLjsa2zAhrPXxzsCv2W78HRke-PvAJuCa-tpwta0a8lxe_adQP3kZ4bM9dXxFl_P-mBhQVHBsJBLTn6"/>
+</div>
+<h4 class="font-bold">Marcus Chen</h4>
+<p class="text-sm text-on-surface-variant">Chief Technical Architect</p>
+</div>
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden rounded-lg mb-4">
+<img alt="Team member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="professional portrait of a woman in business attire with a focus on leadership and expertise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZxue-oPq1XLAUpLYt-Ni4KunK_5FmOIg_VKQ11CJ_LtQ6XyvA0-0ekJMQGnsHY60W60LDoAQfK8np6tqnnu1MDfS1LoMtXOlcEdMcvk17MskrKspEA2rX5kFpiWoFoZkaL7R-2R9Pmif55hzb6D87Hw7koT_b6n2_NcFCbYXs59AlSq3vi2djd3Hy-h7zYS27LrkolLvizSFXAk6Tth6KAs-MEZwMkgHktBNt3pGXBTNoEX77Is_0bVWDPudXalP-eZc2yUz5ISAo"/>
+</div>
+<h4 class="font-bold">Elena Rodriguez</h4>
+<p class="text-sm text-on-surface-variant">Lead Product Designer</p>
+</div>
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden rounded-lg mb-4">
+<img alt="Team member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="professional portrait of a young tech innovator in a minimalist studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs2QKs3Sj1Gge7nOqHbQ5GJhSlGqm0es4xVPJm8Ka4gVcxDdljUOW-YiftmnzdyGsn14Lr54pggXe0KviUNHLikl9yJfyOqt1MxTxOsDFAeezK6Xgp6OKb-va8bQqEiPJy5O5h1Y88Fclt3-h-uyAXFxdb6dvjq-vKmFzSvy66dXJLqN-Wm-WfXiRCvFw2POuWegfBvTIIOUzsNLR7fwrXb7_8wri79ciDIgoR2k8M00cAm9qRQz8oiN9icnS_jN2msO71E0UgJHVK"/>
+</div>
+<h4 class="font-bold">David Park</h4>
+<p class="text-sm text-on-surface-variant">Full Stack Lead</p>
+</div>
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden rounded-lg mb-4">
+<img alt="Team member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="professional portrait of an experienced technology consultant with a friendly but authoritative expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEc8Y0S7-JcAN-klX3hKl7c43ynAHBgY98ncn4sdHZlnH6cq2ijj_rtdkug-ltOcOE3fAxW1i89FPP7-08FmcZ0cku3f05q1MUPlXMQt2ObkoytNR96cO30_EPbtVa8o3ThZEjEupuG7xeOJEbUrIQAeiBik8MkbGlddQncuIB2JMDQnf_aYbeWYX7U3YINrUS813_TDSjD9UhCMNu7qgXCiZ-jE0aYBzRij0pqJkP857Kg1QKxXrY-s_j8bCTBgVTOKIx1JJXkL_2"/>
+</div>
+<h4 class="font-bold">Sarah Jenkins</h4>
+<p class="text-sm text-on-surface-variant">Strategy Director</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-surface-container p-12 md:p-20 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">Let’s Build the Future Together</h2>
+<p class="text-lg text-on-surface-variant mb-12">Ready to elevate your digital presence? Our experts are standing by to architect your next breakthrough.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-medium">solutions@tuskqtech.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="font-medium">+1 (555) 012-3456</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-medium">Silicon Valley, CA</span>
+</div>
+</div>
+</div>
+<form class="space-y-6">
+<div class="space-y-4">
+<label class="block text-sm font-bold">Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-4">
+<label class="block text-sm font-bold">Work Email</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="john@company.com" type="email"/>
+</div>
+<div class="space-y-4">
+<label class="block text-sm font-bold">Project Overview</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="Tell us about your goals..." rows="4"></textarea>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-4 rounded-lg font-bold hover:bg-primary transition-all" type="submit">Submit Request</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-12 px-8 bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-black text-on-surface">TuskQtech</span>
+<p class="text-sm text-on-surface-variant font-['Manrope'] tracking-normal">© 2024 TuskQtech. Engineering Authority for the Digital Era.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 text-sm font-['Manrope'] tracking-normal">
+<a class="text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-opacity duration-300 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-opacity duration-300 hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-opacity duration-300 hover:opacity-80" href="#">Cookie Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-opacity duration-300 hover:opacity-80" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+
+</body></html>

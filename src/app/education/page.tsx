@@ -3,20 +3,18 @@ import Link from "next/link";
 
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
-import { bootcamps } from "@/content/site-content";
+import { educationPageTracks, roadmapContent } from "@/content/site-content";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Education",
-  description:
-    "Review TuskQtech bootcamp tracks for frontend, backend, infrastructure, security, product, and applied AI.",
+  description: "Learning tracks and execution process for technical growth.",
   alternates: {
     canonical: absoluteUrl("/education"),
   },
   openGraph: {
     title: "Education | TuskQtech",
-    description:
-      "Review TuskQtech bootcamp tracks for frontend, backend, infrastructure, security, product, and applied AI.",
+    description: "Learning tracks and execution process for technical growth.",
     url: absoluteUrl("/education"),
     type: "website",
     images: [
@@ -24,61 +22,68 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech education and bootcamps",
+        alt: "TuskQtech education",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Education | TuskQtech",
-    description:
-      "Review TuskQtech bootcamp tracks for frontend, backend, infrastructure, security, product, and applied AI.",
-    images: [absoluteUrl(siteConfig.ogImage)],
   },
 };
 
 export default function EducationPage() {
   return (
-    <SiteLayout headerCtaLabel="Apply Now">
-      <section className="mesh-grain px-5 py-20 sm:px-8 lg:px-12">
-        <div className="mx-auto w-full max-w-[1400px]">
-          <p className="font-mono text-[10px] tracking-[0.28em] text-secondary">EDUCATION TRACKS</p>
-          <h1 className="font-headline mt-3 text-6xl leading-[0.9] sm:text-7xl md:text-8xl">
-            TRAIN FOR
-            <br />
-            <span className="text-secondary">REAL DELIVERY</span>
+    <SiteLayout headerCtaLabel="Contact Us">
+      <section className="bg-surface-container-low py-32" data-reveal>
+        <div className="mx-auto w-full max-w-7xl px-8">
+          <h1 className="section-title mb-16 text-5xl" data-reveal data-reveal-delay="1">
+            Technical Learning Paths
           </h1>
-          <p className="mt-8 max-w-[70ch] text-on-surface-soft sm:text-lg">
-            Curriculum built around modern software teams, combining production tooling, mentorship,
-            and practical outcomes that hiring managers can verify.
-          </p>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {educationPageTracks.map((track, index) => (
+              <article
+                key={track.title}
+                data-reveal
+                data-reveal-delay={String((index % 3) + 1)}
+                className="lift-card rounded-xl bg-surface p-8"
+              >
+                <h2 className="mb-3 text-xl font-bold">{track.title}</h2>
+                <p className="text-sm leading-relaxed text-on-surface-variant">{track.description}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-xl bg-surface p-8" data-reveal data-reveal-delay="2">
+            <h3 className="mb-4 text-2xl font-bold">Apply for Learning Tracks</h3>
+            <p className="mb-6 text-on-surface-variant">
+              Submit admissions details to get the right program recommendation.
+            </p>
+            <Link href="/contact#admissions" className="btn-primary px-8 py-3 text-sm">
+              Admissions Form
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="bg-surface-low px-5 pb-28 sm:px-8 lg:px-12">
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-6 lg:grid-cols-3">
-          {bootcamps.map((bootcamp) => (
-            <article key={bootcamp.title} className="bg-surface p-8">
-              <div className="h-1 w-14 bg-secondary" />
-              <p className="mt-6 font-mono text-[10px] tracking-[0.18em] text-secondary">
-                {bootcamp.level}
-              </p>
-              <h2 className="font-headline mt-3 text-4xl">{bootcamp.title}</h2>
-              <p className="mt-4 min-h-[74px] text-on-surface-soft">{bootcamp.description}</p>
+      <section className="bg-surface-container py-32" data-reveal>
+        <div className="mx-auto w-full max-w-7xl px-8">
+          <h2 className="section-title mb-20 text-center text-3xl">{roadmapContent.title}</h2>
 
-              <div className="mt-8 bg-[rgba(0,0,0,0.25)] p-4">
-                <p className="font-mono text-[10px] tracking-[0.14em] text-outline">NEXT COHORT</p>
-                <p className="mt-2 font-mono text-sm text-on-surface">{bootcamp.cohort}</p>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
+            {roadmapContent.steps.map((step, index) => (
+              <div key={step.number} className="relative" data-reveal data-reveal-delay={String((index % 3) + 1)}>
+                <div
+                  className={`mb-6 flex h-12 w-12 items-center justify-center rounded-full font-bold ${
+                    step.active
+                      ? "bg-secondary text-on-secondary"
+                      : "bg-surface-container-highest text-primary"
+                  }`}
+                >
+                  {step.number}
+                </div>
+                <h4 className="mb-2 font-bold">{step.title}</h4>
+                <p className="text-sm text-on-surface-variant">{step.description}</p>
               </div>
-
-              <Link
-                href="/contact#admissions"
-                className="mt-7 block w-full border border-[rgba(255,170,23,0.45)] py-3 text-center font-mono text-[11px] tracking-[0.16em] text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
-              >
-                ENROLL NOW
-              </Link>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 
 type FormDataState = {
   name: string;
@@ -15,8 +15,6 @@ const initialFormState: FormDataState = {
   projectType: "",
   scope: "",
 };
-
-const scopeLimit = 2000;
 
 function validate(values: FormDataState) {
   const errors: string[] = [];
@@ -38,10 +36,6 @@ function validate(values: FormDataState) {
     errors.push("Scope details must be at least 10 characters.");
   }
 
-  if (values.scope.length > scopeLimit) {
-    errors.push(`Scope details must be under ${scopeLimit} characters.`);
-  }
-
   return errors;
 }
 
@@ -49,8 +43,6 @@ export function ContactBriefForm() {
   const [formData, setFormData] = useState<FormDataState>(initialFormState);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
-
-  const remaining = useMemo(() => scopeLimit - formData.scope.length, [formData.scope.length]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -110,9 +102,9 @@ export function ContactBriefForm() {
   }
 
   return (
-    <form className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2" onSubmit={onSubmit} noValidate>
-      <label className="sm:col-span-1">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">FULL NAME</span>
+    <form className="space-y-6" onSubmit={onSubmit} noValidate>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">Name</label>
         <input
           type="text"
           name="name"
@@ -122,12 +114,13 @@ export function ContactBriefForm() {
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, name: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
+          className="form-input"
+          placeholder="John Doe"
         />
-      </label>
+      </div>
 
-      <label className="sm:col-span-1">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">WORK EMAIL</span>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">Work Email</label>
         <input
           type="email"
           name="email"
@@ -136,12 +129,13 @@ export function ContactBriefForm() {
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, email: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
+          className="form-input"
+          placeholder="john@company.com"
         />
-      </label>
+      </div>
 
-      <label className="sm:col-span-2">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">PROJECT TYPE</span>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">Project Type</label>
         <input
           type="text"
           name="projectType"
@@ -151,46 +145,36 @@ export function ContactBriefForm() {
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, projectType: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
+          className="form-input"
+          placeholder="Website, app, or platform"
         />
-      </label>
+      </div>
 
-      <label className="sm:col-span-2">
-        <span className="font-mono text-[10px] tracking-[0.12em] text-on-surface-soft">SCOPE DETAILS</span>
+      <div className="space-y-4">
+        <label className="block text-sm font-bold">Project Overview</label>
         <textarea
           name="scope"
           rows={4}
           value={formData.scope}
           required
           minLength={10}
-          maxLength={scopeLimit}
           onChange={(event) => {
             setFormData((previous) => ({ ...previous, scope: event.currentTarget.value }));
           }}
-          className="mt-2 w-full border-b-2 border-outline bg-transparent py-2 text-sm outline-none focus:border-primary"
+          className="form-input"
+          placeholder="Tell us about your goals..."
         />
-        <div className="mt-2 font-mono text-[10px] text-on-surface-soft">{remaining} characters left</div>
-      </label>
-
-      <div className="sm:col-span-2 mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="btn-primary rounded-sm px-8 py-3 text-[11px] font-semibold tracking-[0.18em] disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {status === "loading" ? "SUBMITTING..." : "SUBMIT BRIEF"}
-        </button>
-
-        {status !== "idle" ? (
-          <p
-            className={`text-sm ${status === "error" ? "text-[#ff8d89]" : "text-primary"}`}
-            role="status"
-            aria-live="polite"
-          >
-            {message}
-          </p>
-        ) : null}
       </div>
+
+      <button type="submit" disabled={status === "loading"} className="btn-primary w-full py-4 text-base disabled:opacity-60">
+        {status === "loading" ? "Submitting..." : "Submit Request"}
+      </button>
+
+      {status !== "idle" ? (
+        <p className={`text-sm ${status === "error" ? "text-danger" : "text-primary"}`} role="status" aria-live="polite">
+          {message}
+        </p>
+      ) : null}
     </form>
   );
 }

@@ -3,309 +3,226 @@ export type NavItem = {
   href: string;
 };
 
-export type Metric = {
-  value: string;
-  label: string;
-  accent: "primary" | "secondary";
-};
-
-export type Service = {
-  id: string;
-  title: string;
-  description: string;
-  stack: string[];
-  module: string;
-};
-
-export type Bootcamp = {
-  level: string;
-  title: string;
-  description: string;
-  cohort: string;
-};
-
-export type Pillar = {
-  key: string;
-  accent: "primary" | "secondary";
-  marker: string;
-  title: string;
-  description: string;
-  bullets: string[];
-  image: string;
-  imageAlt: string;
-};
-
-export type HeroTrack = {
-  key: string;
-  title: string;
-  description: string;
-  href: string;
-};
-
-export type NextStep = {
-  key: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  href: string;
-  cta: string;
-};
-
-export const siteName = "TuskQtech";
-
 export const navItems: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Education", href: "/education" },
   { label: "Contact", href: "/contact" },
 ];
 
-export const hero = {
-  badge: "FRAMEWORK V4.2.0 LIVE",
-  headingTop: "TUSKQTECH",
-  headingAccent: "KINETIC MONOLITH",
-  headingBottom: "FRAMEWORK",
+export const heroContent = {
+  title: "Engineering the Future of Digital Innovation",
+  subtitle:
+    "We design, build, and scale powerful digital products that empower businesses to thrive in a rapidly evolving technological landscape.",
+};
+
+export const philosophyContent = {
+  eyebrow: "Our Philosophy",
+  title: "Driven by Innovation. Defined by Excellence.",
   body:
-    "Where B2B precision meets the velocity of Gen Z energy. We build digital systems that scale with operational authority.",
-  image: "/hero-web1.jpg",
-  imageAlt: "TuskQtech homepage concept preview",
-  status: "SYSTEM_AUTH: STABLE",
-  actions: [
-    { label: "Scale Agency", href: "/services", variant: "primary" as const },
-    { label: "Join Bootcamp", href: "/education", variant: "secondary" as const },
+    "TuskQTech operates at the intersection of technical mastery and creative vision. We don't just build software; we engineer authority. Our team serves as a high-velocity extension of your business, delivering digital infrastructure that is as robust as it is intuitive.",
+  stats: [
+    { value: "120+", label: "Enterprise Solutions Delivered" },
+    { value: "98%", label: "Client Retention Rate" },
+  ],
+  quote:
+    "Their technical precision is matched only by their commitment to our long-term growth.",
+  quoteAuthor: "— CTO, Global FinTech",
+};
+
+export const solutionCards = [
+  {
+    icon: "code",
+    title: "Web Development",
+    description:
+      "Building high-performance, scalable web architectures using modern frameworks that prioritize speed and security.",
+    variant: "wide" as const,
+  },
+  {
+    icon: "smartphone",
+    title: "App Development",
+    description:
+      "Native and cross-platform mobile experiences that engage users and drive conversion.",
+    variant: "standard" as const,
+  },
+  {
+    icon: "palette",
+    title: "UI/UX Design",
+    description:
+      "Sophisticated interface design backed by deep user research and behavioral psychology.",
+    variant: "standard" as const,
+  },
+  {
+    icon: "cloud",
+    title: "Cloud & DevOps",
+    description:
+      "Architecting resilient infrastructure that scales with your growth while maintaining zero downtime.",
+    variant: "standard" as const,
+  },
+];
+
+export const whyChooseUs = {
+  title: "Your Competitive Advantage in Technology",
+  subtitle:
+    "We don't just deliver code; we deliver strategic assets that redefine your market position.",
+  points: [
+    { index: "01", title: "Performance", body: "Optimized for extreme speed and response times." },
+    { index: "02", title: "Client-Centricity", body: "Deeply integrated partnerships at every stage." },
+    { index: "03", title: "Innovation", body: "Cutting-edge R&D applied to every project." },
+    { index: "04", title: "Security", body: "Military-grade protocols and data integrity." },
+    { index: "05", title: "Agile Delivery", body: "Rapid iterations with measurable value." },
   ],
 };
 
-export const heroTracks: HeroTrack[] = [
-  {
-    key: "academy",
-    title: "Academy",
-    description: "Cohort-based learning paths with real project pressure and mentorship.",
-    href: "/education",
-  },
-  {
-    key: "engineering",
-    title: "Engineering",
-    description: "Production delivery across product, platform, and security workflows.",
-    href: "/services",
-  },
-  {
-    key: "residency",
-    title: "Residency",
-    description: "Intensive builder-style sprint culture for rapid execution and outcomes.",
-    href: "/contact#career-intake",
-  },
-];
+export const portfolioContent = {
+  title: "Transforming Ideas into Reality",
+  cta: "Explore Full Portfolio",
+  items: [
+    {
+      title: "Smart Business Dashboard",
+      description: "A comprehensive analytics engine for real-time decision making.",
+    },
+    {
+      title: "E-Commerce Platform",
+      description: "High-conversion retail infrastructure designed for global scale.",
+    },
+  ],
+};
 
-export const nextSteps: NextStep[] = [
-  {
-    key: "academy",
-    title: "Academy",
-    subtitle: "Join the Academy",
-    description:
-      "Master frontend, backend, security, and AI with guided projects and cohort mentorship.",
-    href: "/education",
-    cta: "Start Learning",
-  },
-  {
-    key: "engineering",
-    title: "Engineering",
-    subtitle: "Work With Our Team",
-    description:
-      "Turn ideas into production systems with full-stack execution and performance-first delivery.",
-    href: "/services",
-    cta: "Ship Your Product",
-  },
-  {
-    key: "residency",
-    title: "Residency",
-    subtitle: "Career Intake",
-    description:
-      "Collaborate with high-intent builders and join an execution culture designed to ship weekly.",
-    href: "/contact#career-intake",
-    cta: "Apply Now",
-  },
-];
+export const roadmapContent = {
+  title: "Execution Roadmap",
+  steps: [
+    {
+      number: "1",
+      title: "Discovery",
+      description: "Deep dive into your business goals and technical constraints.",
+      active: true,
+    },
+    {
+      number: "2",
+      title: "Design",
+      description: "Architecting the user experience and visual identity.",
+      active: false,
+    },
+    {
+      number: "3",
+      title: "Development",
+      description: "Clean, modular code built for performance and scale.",
+      active: false,
+    },
+    {
+      number: "4",
+      title: "Testing",
+      description: "Rigorous quality assurance and security auditing.",
+      active: false,
+    },
+    {
+      number: "5",
+      title: "Support",
+      description: "Ongoing optimization and strategic evolution.",
+      active: false,
+    },
+  ],
+};
 
-export const metrics: Metric[] = [
-  { value: "99%", label: "Success Rate", accent: "primary" },
-  { value: "500+", label: "Students Trained", accent: "secondary" },
-  { value: "24/7", label: "Active Monitoring", accent: "primary" },
-  { value: "15+", label: "Global Partnerships", accent: "secondary" },
-];
-
-export const partnerWords = ["QUANTUM", "BLOCKCORE", "SYNAPSE", "VECTOR", "SKYNET"];
-
-export const pillars: Pillar[] = [
-  {
-    key: "b2b",
-    accent: "primary",
-    marker: "CORE 01 // INDUSTRIAL GRADE",
-    title: "B2B Development",
-    description:
-      "Architecture built for technical leadership, stability, and measurable enterprise outcomes.",
-    bullets: ["MICROSERVICES ORCHESTRATION", "ZERO-TRUST INFRASTRUCTURE"],
-    image: "/pillar-b2b.jpg",
-    imageAlt: "B2B engineering and infrastructure environment",
-  },
-  {
-    key: "education",
-    accent: "secondary",
-    marker: "CORE 02 // TALENT SYNTHESIS",
-    title: "Tech Education",
-    description:
-      "High-intensity learning tracks that convert ambition into production-ready technical skill.",
-    bullets: ["ACCELERATED CAREER PATHS", "MENTORSHIP-FIRST EXECUTION"],
-    image: "/pillar-education.jpg",
-    imageAlt: "High-energy technical education workspace",
-  },
-];
-
-export const services: Service[] = [
-  {
-    id: "01",
-    title: "Custom Web/Mobile App Development",
-    description:
-      "Cross-platform systems designed for reliability, resilience, and scale without sacrificing product velocity.",
-    stack: ["NEXT.JS", "FLUTTER", "AWS CORE"],
-    module: "MODULE_WM-201",
-  },
-  {
-    id: "02",
-    title: "Cybersecurity Solutions",
-    description:
-      "Threat-first architecture with hardened controls, security testing, and operational response loops.",
-    stack: ["PEN-TESTING", "BLOCKCHAIN", "SOC2"],
-    module: "MODULE_CS-542",
-  },
-  {
-    id: "03",
-    title: "Cloud Migration and DevOps",
-    description:
-      "Migration blueprints and release pipelines that reduce downtime while improving deployment confidence.",
-    stack: ["KUBERNETES", "CICD", "OBSERVABILITY"],
-    module: "MODULE_CM-114",
-  },
-  {
-    id: "04",
-    title: "UI/UX for Technical Products",
-    description:
-      "Interface systems for operator-grade tools with clear data hierarchy and high-intent interaction states.",
-    stack: ["DESIGN TOKENS", "ACCESSIBILITY", "RESEARCH"],
-    module: "MODULE_UX-308",
-  },
-  {
-    id: "05",
-    title: "Data Platforms and AI Integration",
-    description:
-      "Data pipelines and intelligent automation layers that unlock insights and reduce repetitive manual effort.",
-    stack: ["MLOPS", "VECTOR DB", "INFERENCE"],
-    module: "MODULE_DA-722",
-  },
-  {
-    id: "06",
-    title: "Product Rescue and Modernization",
-    description:
-      "Structured rescue plans for legacy products, including audit, refactor, rollout, and measurable quality lift.",
-    stack: ["AUDIT", "REFACTOR", "MIGRATION"],
-    module: "MODULE_PR-019",
-  },
-];
-
-export const bootcamps: Bootcamp[] = [
-  {
-    level: "LEVEL_01 // FRONTEND",
-    title: "Web Building",
-    description:
-      "From neo-brutalist composition to modern app architecture with production patterns.",
-    cohort: "AUG_24_2026",
-  },
-  {
-    level: "LEVEL_02 // INFRA",
-    title: "Networks",
-    description:
-      "Cloud networking, routing strategy, and zero-trust fundamentals for real deployment contexts.",
-    cohort: "SEP_12_2026",
-  },
-  {
-    level: "LEVEL_03 // SECURITY",
-    title: "Cybersecurity",
-    description:
-      "Blue-team and red-team workflows, simulation labs, and incident response training.",
-    cohort: "OCT_05_2026",
-  },
-  {
-    level: "LEVEL_04 // BACKEND",
-    title: "Backend Engineering",
-    description:
-      "Production backend systems, APIs, observability, and resilient service architecture.",
-    cohort: "NOV_16_2026",
-  },
-  {
-    level: "LEVEL_05 // PRODUCT",
-    title: "Product Design for Tech",
-    description:
-      "Research, UX architecture, and interface systems for complex technical products.",
-    cohort: "DEC_09_2026",
-  },
-  {
-    level: "LEVEL_06 // AI",
-    title: "Applied AI Delivery",
-    description:
-      "End-to-end AI workflow from use-case design to deployable model-backed features.",
-    cohort: "JAN_21_2027",
-  },
-];
+export const teamContent = {
+  title: "The Minds Behind TuskQTech",
+  subtitle: "A collective of engineers, designers, and strategists.",
+  members: [
+    { name: "Marcus Chen", role: "Chief Technical Architect" },
+    { name: "Elena Rodriguez", role: "Lead Product Designer" },
+    { name: "David Park", role: "Full Stack Lead" },
+    { name: "Sarah Jenkins", role: "Strategy Director" },
+  ],
+};
 
 export const contactChannels = [
   {
-    title: "Enterprise Projects",
-    details: "solutions@tuskqtech.com",
-    note: "Architecture, modernization, and delivery partnerships.",
+    title: "Email",
+    details: "contact@tuskqtech.com",
+    note: "Project consultations, partnerships, and strategic inquiries.",
   },
   {
-    title: "Bootcamp Admissions",
-    details: "academy@tuskqtech.com",
-    note: "Cohort counseling, curriculum fit, and enrollment support.",
-  },
-  {
-    title: "General Inquiries",
+    title: "Phone",
     details: "+977 98000 00000",
     note: "Mon-Fri, 9:00-18:00 NPT",
   },
+  {
+    title: "Location",
+    details: "Nepal",
+    note: "Serving clients globally with distributed delivery practices.",
+  },
 ];
 
-export const cta = {
-  headingTop: "READY TO",
-  headingBottom: "MONOLITH?",
-  body:
-    "Join the agency defining a practical, high-energy standard for enterprise development and technical education.",
-  image: "/cta-tech.avif",
-  imageAlt: "Futuristic data center atmosphere",
-  actions: [
-    { label: "Initiate Partnership", href: "/contact", variant: "primary" as const },
-    { label: "Career Intake", href: "/contact#career-intake", variant: "ghost" as const },
-  ],
-};
+export const servicesPageContent = [
+  {
+    title: "Web Development",
+    description:
+      "We build high-performance websites that are fast, secure, and responsive across all devices.",
+    points: [
+      "Responsive & mobile-first design",
+      "SEO-optimized architecture",
+      "High-speed performance",
+      "Secure and scalable systems",
+    ],
+  },
+  {
+    title: "Application Development",
+    description:
+      "We turn your ideas into robust mobile and web applications designed for growth and adaptability.",
+    points: [
+      "Custom app development",
+      "Cross-platform solutions",
+      "API integration",
+      "Scalable backend architecture",
+    ],
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "We design intuitive user experiences that engage users and drive outcomes.",
+    points: [
+      "User-centered design",
+      "Interactive prototypes",
+      "Clean and modern interfaces",
+      "Conversion-focused UX",
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    description:
+      "We build secure, scalable, and highly available infrastructure with modern cloud and delivery practices.",
+    points: [
+      "Cloud deployment (AWS, Vercel, etc.)",
+      "CI/CD automation pipelines",
+      "Performance monitoring",
+      "Advanced data security",
+    ],
+  },
+];
 
-export const footer = {
-  tagline: "Kinetic Monolith Framework. Engineered for Authority.",
-  columns: [
-    {
-      title: "Ecosystem",
-      links: [
-        { label: "Services", href: "/services" },
-        { label: "Education", href: "/education" },
-        { label: "Contact", href: "/contact" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { label: "Project Brief", href: "/contact#project-brief" },
-        { label: "Admissions", href: "/contact#admissions" },
-        { label: "Careers", href: "/contact#career-intake" },
-      ],
-    },
-  ],
-  copyright: "© 2026 TUSKQTECH // STABLE_REL_04",
-};
+export const educationPageTracks = [
+  {
+    title: "Frontend Engineering",
+    description: "Build modern interfaces with production-grade component architecture.",
+  },
+  {
+    title: "Backend & API Systems",
+    description: "Design scalable backend services and resilient API workflows.",
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Ship reliable software with cloud infrastructure and CI/CD practices.",
+  },
+  {
+    title: "UI/UX Product Design",
+    description: "Create intuitive digital products with research-backed design decisions.",
+  },
+  {
+    title: "Applied AI",
+    description: "Integrate AI capabilities into real products with practical architecture.",
+  },
+  {
+    title: "Cybersecurity",
+    description: "Adopt security-first engineering with threat-aware implementation.",
+  },
+];

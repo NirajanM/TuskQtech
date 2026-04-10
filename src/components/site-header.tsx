@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { navItems } from "@/content/site-content";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 type SiteHeaderProps = {
   ctaLabel?: string;
@@ -9,35 +10,35 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ ctaLabel = "Contact Us" }: SiteHeaderProps) {
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-[rgba(153,247,255,0.14)] bg-[rgba(8,11,16,0.86)] backdrop-blur-[20px] ambient-glow-cyan">
+    <header className="site-nav fixed top-0 z-50 w-full">
       <nav className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-12">
-        <div className="fade-in-up">
-          <Link href="/" className="logo-shell inline-flex items-center rounded-md px-2 py-1" aria-label="TuskQtech home">
+        <div>
+          <Link href="/" className="inline-flex items-center" aria-label="TuskQtech home">
             <Image
-              src="/logo.png"
+              src="/LogoTuskQ.svg"
               alt="TuskQtech logo"
-              width={164}
-              height={49}
+              width={300}
+              height={68}
               priority
-              className="h-auto w-[128px] sm:w-[164px]"
+              className="h-auto w-[124px] sm:w-[172px] lg:w-[198px]"
             />
           </Link>
         </div>
 
-        <div className="hidden items-center gap-6 text-[10px] font-semibold tracking-[0.2em] text-on-surface-soft sm:flex md:gap-8">
+        <div className="hidden items-center gap-6 text-[13px] font-semibold tracking-[0.08em] sm:flex md:gap-8">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition-colors hover:text-primary">
+            <Link key={item.href} href={item.href} className="nav-link transition-colors">
               {item.label.toUpperCase()}
             </Link>
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          className="btn-primary rounded-sm px-4 py-2 text-[10px] font-semibold tracking-[0.18em] transition-all"
-        >
-          {ctaLabel.toUpperCase()}
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link href="/contact" className="btn-primary rounded-lg px-4 py-2.5 text-[10px] sm:px-6 sm:text-sm">
+            {ctaLabel}
+          </Link>
+        </div>
       </nav>
     </header>
   );

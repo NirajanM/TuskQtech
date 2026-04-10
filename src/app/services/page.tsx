@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
-import { services } from "@/content/site-content";
+import { servicesPageContent } from "@/content/site-content";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Services",
-  description:
-    "Explore TuskQtech engineering and consulting services across product, platform, cybersecurity, and modernization.",
+  description: "Solutions that power your growth.",
   alternates: {
     canonical: absoluteUrl("/services"),
   },
   openGraph: {
     title: "Services | TuskQtech",
-    description:
-      "Explore TuskQtech engineering and consulting services across product, platform, cybersecurity, and modernization.",
+    description: "Solutions that power your growth.",
     url: absoluteUrl("/services"),
     type: "website",
     images: [
@@ -23,65 +22,76 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech services overview",
+        alt: "TuskQtech services",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Services | TuskQtech",
-    description:
-      "Explore TuskQtech engineering and consulting services across product, platform, cybersecurity, and modernization.",
-    images: [absoluteUrl(siteConfig.ogImage)],
   },
 };
 
 export default function ServicesPage() {
+  const primaryService = servicesPageContent[0];
+
   return (
-    <SiteLayout headerCtaLabel="Start Project">
-      <section className="mesh-grain px-5 py-20 sm:px-8 lg:px-12">
-        <div className="mx-auto w-full max-w-[1400px]">
-          <p className="font-mono text-[10px] tracking-[0.28em] text-primary">SERVICE CATALOG</p>
-          <h1 className="font-headline mt-3 text-6xl leading-[0.9] sm:text-7xl md:text-8xl">
-            BUILD SYSTEMS
-            <br />
-            <span className="bg-gradient-to-br from-primary to-primary-strong bg-clip-text text-transparent">
-              THAT ENDURE
-            </span>
-          </h1>
-          <p className="mt-8 max-w-[70ch] text-on-surface-soft sm:text-lg">
-            We deliver modular execution layers from architecture strategy to production hardening,
-            with measurable outcomes and operator-grade quality.
-          </p>
-        </div>
-      </section>
+    <SiteLayout headerCtaLabel="Contact Us">
+      <section className="bg-surface py-32" data-reveal>
+        <div className="mx-auto w-full max-w-7xl px-8">
+          <div className="mb-16" data-reveal data-reveal-delay="1">
+            <h1 className="section-title text-5xl">Solutions That Power Your Growth</h1>
+            <div className="mt-4 h-1 w-20 bg-primary" />
+          </div>
 
-      <section className="px-5 pb-28 sm:px-8 lg:px-12">
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-6 lg:grid-cols-2">
-          {services.map((service) => (
-            <article key={service.id} className="tech-card bg-surface p-7 sm:p-10">
-              <div className="flex items-start justify-between">
-                <p className="font-mono text-[42px] leading-none text-outline-ghost/55">{service.id}</p>
+          {primaryService ? (
+            <article
+              data-reveal
+              data-reveal-delay="1"
+              className="lift-card mb-10 rounded-xl bg-gradient-to-br from-primary to-brand-purple p-10 text-on-primary shadow-[0_28px_54px_rgba(0,86,179,0.28)]"
+            >
+              <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-on-primary/15 text-on-primary">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-none stroke-current stroke-2">
+                  <path d="M9 8 5 12l4 4" />
+                  <path d="m15 8 4 4-4 4" />
+                </svg>
               </div>
-              <h2 className="font-headline mt-5 text-4xl leading-[0.95]">{service.title}</h2>
-              <p className="mt-5 max-w-[56ch] text-on-surface-soft">{service.description}</p>
-
-              <div className="mt-8 flex flex-wrap gap-2">
-                {service.stack.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-surface-high px-3 py-1 font-mono text-[10px] tracking-[0.12em] text-on-surface-soft"
-                  >
-                    {item}
-                  </span>
+              <h2 className="mb-4 text-3xl font-black md:text-4xl">{primaryService.title}</h2>
+              <p className="mb-6 max-w-3xl text-on-primary/90">{primaryService.description}</p>
+              <div className="grid gap-2 md:grid-cols-2">
+                {primaryService.points.map((point) => (
+                  <p key={point} className="text-sm text-on-primary/90">
+                    • {point}
+                  </p>
                 ))}
               </div>
-
-              <div className="mt-8 text-right font-mono text-[10px] tracking-[0.16em] text-on-surface-soft">
-                {service.module}
-              </div>
             </article>
-          ))}
+          ) : null}
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {servicesPageContent.slice(1).map((service, index) => (
+              <article
+                key={service.title}
+                data-reveal
+                data-reveal-delay={String((index % 3) + 1)}
+                className={`lift-card rounded-xl p-10 ${index % 2 === 0 ? "bg-surface-container" : "bg-surface-container-low"}`}
+              >
+                <h2 className="mb-4 text-2xl font-bold md:text-3xl">{service.title}</h2>
+                <p className="mb-6 leading-relaxed text-on-surface-variant">{service.description}</p>
+                <ul className="space-y-2 text-sm text-on-surface-variant">
+                  {service.points.map((point) => (
+                    <li key={point}>• {point}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-xl bg-surface-container p-8" data-reveal data-reveal-delay="2">
+            <h3 className="mb-4 text-2xl font-bold">Start a Service Conversation</h3>
+            <p className="mb-6 text-on-surface-variant">
+              Ready to work together? Submit a project brief and our team will follow up.
+            </p>
+            <Link href="/contact#project-brief" className="btn-primary px-8 py-3 text-sm">
+              Submit Project Brief
+            </Link>
+          </div>
         </div>
       </section>
 

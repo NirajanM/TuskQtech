@@ -98,7 +98,7 @@ export async function POST(request: Request) {
 
   const embed = {
     title: "New TuskQtech Contact Submission",
-    color: 0x99f7ff,
+    color: 0x0056b3,
     fields: [
       { name: "Form Type", value: payload.formType ?? "project-brief", inline: true },
       { name: "Submitted At", value: submittedAt, inline: true },

@@ -20,17 +20,16 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "60px",
-          background:
-            "linear-gradient(135deg, rgba(12,14,19,1) 0%, rgba(17,19,24,1) 60%, rgba(0,241,254,0.2) 100%)",
-          color: "#f6f6fd",
-          fontFamily: "sans-serif",
+          background: "linear-gradient(135deg, #0056B3 0%, #003366 100%)",
+          color: "#ffffff",
+          fontFamily: "Manrope, sans-serif",
         }}
       >
-        <div style={{ fontSize: 24, letterSpacing: 4, color: "#99f7ff" }}>KINETIC MONOLITH FRAMEWORK</div>
+        <div style={{ fontSize: 24, letterSpacing: 4, color: "#d6e2ff" }}>ENGINEERING AUTHORITY</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div style={{ fontSize: 88, fontWeight: 800, lineHeight: 1 }}>TUSKQTECH</div>
-          <div style={{ fontSize: 34, maxWidth: 860, color: "#aaabb1" }}>
-            Industrial software delivery and technical education built with precision and speed.
+          <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>TUSKQTECH</div>
+          <div style={{ fontSize: 34, maxWidth: 860, color: "#e0edff" }}>
+            Engineering the Future of Digital Innovation.
           </div>
         </div>
         <div
@@ -39,7 +38,7 @@ export default function OpenGraphImage() {
             justifyContent: "space-between",
             alignItems: "center",
             fontSize: 24,
-            color: "#ffaa17",
+            color: "#ffffff",
           }}
         >
           <span>{siteConfig.name}</span>

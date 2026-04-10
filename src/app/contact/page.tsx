@@ -3,20 +3,17 @@ import type { Metadata } from "next";
 import { ContactBriefForm } from "@/components/contact-brief-form";
 import { ContactIntentForm } from "@/components/contact-intent-form";
 import { SiteLayout } from "@/components/site-layout";
-import { contactChannels } from "@/content/site-content";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contact TuskQtech for enterprise projects, bootcamp admissions, and technical collaboration.",
+  description: "Let’s build the future together.",
   alternates: {
     canonical: absoluteUrl("/contact"),
   },
   openGraph: {
     title: "Contact | TuskQtech",
-    description:
-      "Contact TuskQtech for enterprise projects, bootcamp admissions, and technical collaboration.",
+    description: "Let’s build the future together.",
     url: absoluteUrl("/contact"),
     type: "website",
     images: [
@@ -28,87 +25,69 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact | TuskQtech",
-    description:
-      "Contact TuskQtech for enterprise projects, bootcamp admissions, and technical collaboration.",
-    images: [absoluteUrl(siteConfig.ogImage)],
-  },
 };
 
 export default function ContactPage() {
   return (
-    <SiteLayout headerCtaLabel="Contact">
-      <section className="mesh-grain px-5 py-20 sm:px-8 lg:px-12">
-        <div className="mx-auto w-full max-w-[1400px]">
-          <p className="font-mono text-[10px] tracking-[0.28em] text-primary">COMMUNICATION LAYER</p>
-          <h1 className="font-headline mt-3 text-6xl leading-[0.9] sm:text-7xl md:text-8xl">
-            LET&apos;S BUILD
-            <br />
-            <span className="bg-gradient-to-br from-primary to-primary-strong bg-clip-text text-transparent">
-              WITH INTENT
-            </span>
-          </h1>
-          <p className="mt-8 max-w-[70ch] text-on-surface-soft sm:text-lg">
-            Share your project brief, admissions intent, or career profile. We reply with clear next
-            steps and a practical execution path.
-          </p>
-        </div>
-      </section>
+    <SiteLayout headerCtaLabel="Contact Us">
+      <section className="bg-surface px-8 py-32">
+        <div className="mx-auto w-full max-w-[1400px] rounded-xl bg-surface-container p-12 md:p-20" data-reveal>
+          <div className="grid w-full grid-cols-1 gap-20 md:grid-cols-2">
+            <div data-reveal data-reveal-delay="1">
+              <h1 className="section-title mb-8 text-4xl md:text-5xl">Let’s Build the Future Together</h1>
+              <p className="mb-12 max-w-[52ch] text-lg text-on-surface-variant">
+                Ready to elevate your digital presence? Our experts are standing by to architect your next
+                breakthrough.
+              </p>
 
-      <section className="px-5 pb-28 sm:px-8 lg:px-12">
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr]">
-          <div id="project-brief" className="tech-card bg-surface p-8 sm:p-10">
-            <p className="font-mono text-[10px] tracking-[0.18em] text-primary">PROJECT BRIEF</p>
-            <h2 className="font-headline mt-3 text-5xl">Start a Project</h2>
-            <ContactBriefForm />
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <span className="text-primary">✉</span>
+                  <span className="font-medium">contact@tuskqtech.com</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="text-primary">☎</span>
+                  <span className="font-medium">+977 98000 00000</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="text-primary">⌂</span>
+                  <span className="font-medium">Nepal</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="project-brief" data-reveal data-reveal-delay="2">
+              <ContactBriefForm />
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            <div id="admissions" className="bg-surface p-8">
-              <p className="font-mono text-[10px] tracking-[0.18em] text-secondary">ADMISSIONS</p>
-              <h3 className="font-headline mt-3 text-4xl">Join Bootcamp</h3>
-              <p className="mt-3 text-on-surface-soft">
-                Tell us your background and target role. We will match you with the right cohort.
+          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div id="admissions" className="lift-card rounded-xl bg-surface p-8" data-reveal data-reveal-delay="1">
+              <h2 className="mb-3 text-2xl font-bold">Admissions</h2>
+              <p className="mb-6 text-sm text-on-surface-variant">
+                Share your background and goals to join a suitable learning track.
               </p>
               <ContactIntentForm
                 formType="admissions"
                 projectType="Bootcamp Admissions"
                 detailsLabel="Learning Goals"
-                detailsPlaceholder="Tell us your background and what you want to learn."
+                detailsPlaceholder="Tell us your background and goals."
                 buttonLabel="Send Admissions Request"
               />
             </div>
 
-            <div id="career-intake" className="bg-surface p-8">
-              <p className="font-mono text-[10px] tracking-[0.18em] text-primary">CAREER INTAKE</p>
-              <h3 className="font-headline mt-3 text-4xl">Work With Us</h3>
-              <p className="mt-3 text-on-surface-soft">
-                We recruit engineers, designers, and instructors with strong technical execution.
+            <div id="career-intake" className="lift-card rounded-xl bg-surface p-8" data-reveal data-reveal-delay="2">
+              <h2 className="mb-3 text-2xl font-bold">Career Intake</h2>
+              <p className="mb-6 text-sm text-on-surface-variant">
+                Submit your role and experience if you want to collaborate with our team.
               </p>
               <ContactIntentForm
                 formType="career-intake"
                 projectType="Career Intake"
                 detailsLabel="Role and Experience"
-                detailsPlaceholder="Share your role, stack, and links to portfolio/GitHub."
+                detailsPlaceholder="Share your role, expertise, and links."
                 buttonLabel="Send Career Intake"
               />
-            </div>
-
-            <div className="bg-surface-low p-8">
-              <p className="font-mono text-[10px] tracking-[0.18em] text-on-surface-soft">DIRECT CHANNELS</p>
-              <ul className="mt-4 space-y-5">
-                {contactChannels.map((channel) => (
-                  <li key={channel.title}>
-                    <p className="font-mono text-[10px] tracking-[0.14em] text-on-surface-soft">
-                      {channel.title.toUpperCase()}
-                    </p>
-                    <p className="mt-1 text-on-surface">{channel.details}</p>
-                    <p className="mt-1 text-sm text-on-surface-soft">{channel.note}</p>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
