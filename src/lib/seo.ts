@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "TuskQtech",
-  shortName: "TuskQtech",
+  name: "TuskQ",
+  shortName: "TuskQ",
   description: "Engineering authority for the digital era.",
-  url: "https://tuskqtech.vercel.app",
+  url: "https://tuskq.com",
   ogImage: "/opengraph-image",
   locale: "en_US",
-  creator: "@tuskqtech",
+  creator: "@tuskq",
 } as const;
 
 export function absoluteUrl(pathname = "") {

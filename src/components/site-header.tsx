@@ -13,10 +13,10 @@ export function SiteHeader({ ctaLabel = "Contact Us" }: SiteHeaderProps) {
     <header className="site-nav fixed top-0 z-50 w-full">
       <nav className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <div>
-          <Link href="/" className="inline-flex items-center" aria-label="TuskQtech home">
+          <Link href="/" className="inline-flex items-center" aria-label="TuskQ home">
             <Image
               src="/LogoTuskQ.svg"
-              alt="TuskQtech logo"
+              alt="TuskQ logo"
               width={300}
               height={68}
               priority

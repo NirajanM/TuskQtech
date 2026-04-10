@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/contact"),
   },
   openGraph: {
-    title: "Contact | TuskQtech",
+    title: "Contact | TuskQ",
     description: "Let’s build the future together.",
     url: absoluteUrl("/contact"),
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "Contact TuskQtech",
+        alt: "Contact TuskQ",
       },
     ],
   },
@@ -43,11 +43,7 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <span className="text-primary">✉</span>
-                  <span className="font-medium">contact@tuskqtech.com</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-primary">☎</span>
-                  <span className="font-medium">+977 98000 00000</span>
+                  <span className="font-medium">contact@tuskq.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-primary">⌂</span>

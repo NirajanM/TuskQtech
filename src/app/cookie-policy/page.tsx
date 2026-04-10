@@ -5,7 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "How cookies and similar technologies are used on TuskQtech.",
+  description: "How cookies and similar technologies are used on TuskQ.",
   alternates: {
     canonical: absoluteUrl("/cookie-policy"),
   },
@@ -19,7 +19,7 @@ export default function CookiePolicyPage() {
           <h1 className="section-title mb-8 text-4xl md:text-5xl">Cookie Policy</h1>
           <div className="space-y-6 text-sm leading-relaxed text-on-surface-variant md:text-base">
             <p>
-              TuskQtech uses cookies and similar technologies to support core website functionality,
+              TuskQ uses cookies and similar technologies to support core website functionality,
               improve user experience, and understand traffic trends.
             </p>
             <p>

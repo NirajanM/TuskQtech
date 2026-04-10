@@ -27,7 +27,7 @@ export default function OpenGraphImage() {
       >
         <div style={{ fontSize: 24, letterSpacing: 4, color: "#d6e2ff" }}>ENGINEERING AUTHORITY</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>TUSKQTECH</div>
+          <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>TUSKQ</div>
           <div style={{ fontSize: 34, maxWidth: 860, color: "#e0edff" }}>
             Engineering the Future of Digital Innovation.
           </div>

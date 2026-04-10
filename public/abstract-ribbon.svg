@@ -1,0 +1,40 @@
+<svg width="900" height="620" viewBox="0 0 900 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B5FD7" />
+      <stop offset="1" stop-color="#4F46E5" />
+    </linearGradient>
+    <linearGradient id="ribbonA" x1="90" y1="90" x2="760" y2="530" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6EEFF" stop-opacity="0.85" />
+      <stop offset="1" stop-color="#C6D3FF" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="ribbonB" x1="750" y1="80" x2="130" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.65" />
+      <stop offset="1" stop-color="#E3E9FF" stop-opacity="0.08" />
+    </linearGradient>
+    <filter id="blur" x="-80" y="-80" width="1060" height="780" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="30" />
+    </filter>
+  </defs>
+
+  <rect width="900" height="620" rx="24" fill="url(#bg)" />
+
+  <g filter="url(#blur)">
+    <ellipse cx="180" cy="120" rx="200" ry="120" fill="#BFD2FF" fill-opacity="0.28" />
+    <ellipse cx="760" cy="520" rx="230" ry="120" fill="#D9E4FF" fill-opacity="0.2" />
+  </g>
+
+  <path
+    d="M66 420C145 350 240 268 328 226C422 181 520 177 616 212C699 242 771 301 834 379L779 438C722 373 660 325 589 301C505 272 420 280 338 320C264 356 181 421 113 492L66 420Z"
+    fill="url(#ribbonA)"
+  />
+
+  <path
+    d="M821 160C742 231 649 290 560 330C468 371 367 381 270 352C184 326 111 273 50 199L106 143C162 205 225 251 297 274C382 302 470 292 553 252C628 215 710 152 778 88L821 160Z"
+    fill="url(#ribbonB)"
+  />
+
+  <circle cx="754" cy="128" r="6" fill="#EAF1FF" fill-opacity="0.7" />
+  <circle cx="726" cy="152" r="3" fill="#EAF1FF" fill-opacity="0.6" />
+  <circle cx="168" cy="472" r="4" fill="#EAF1FF" fill-opacity="0.5" />
+</svg>

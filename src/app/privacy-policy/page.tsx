@@ -5,7 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How TuskQtech collects, uses, and protects information.",
+  description: "How TuskQ collects, uses, and protects information.",
   alternates: {
     canonical: absoluteUrl("/privacy-policy"),
   },
@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
           <h1 className="section-title mb-8 text-4xl md:text-5xl">Privacy Policy</h1>
           <div className="space-y-6 text-sm leading-relaxed text-on-surface-variant md:text-base">
             <p>
-              TuskQtech respects your privacy and handles personal information responsibly. This policy
+              TuskQ respects your privacy and handles personal information responsibly. This policy
               explains what data we collect, why we collect it, and how we protect it.
             </p>
             <p>
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               You may request correction or deletion of your personal data by emailing
-              <strong> contact@tuskqtech.com</strong>. We retain data only for operational and legal
+              <strong> contact@tuskq.com</strong>. We retain data only for operational and legal
               requirements.
             </p>
             <p>By using this site, you agree to this Privacy Policy.</p>

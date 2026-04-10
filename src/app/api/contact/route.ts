@@ -97,7 +97,7 @@ export async function POST(request: Request) {
   const submittedAt = payload.submittedAt || new Date().toISOString();
 
   const embed = {
-    title: "New TuskQtech Contact Submission",
+    title: "New TuskQ Contact Submission",
     color: 0x0056b3,
     fields: [
       { name: "Form Type", value: payload.formType ?? "project-brief", inline: true },
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        content: "Inbound submission from tuskqtech.vercel.app",
+        content: "Inbound submission from tuskq.com",
         allowed_mentions: {
           parse: [],
         },

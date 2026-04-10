@@ -3,8 +3,7 @@ import Link from "next/link";
 import { contactChannels } from "@/content/site-content";
 
 export function SectionCta() {
-  const email = contactChannels.find((channel) => channel.title === "Email")?.details ?? "contact@tuskqtech.com";
-  const phone = contactChannels.find((channel) => channel.title === "Phone")?.details ?? "+977 98000 00000";
+  const email = contactChannels.find((channel) => channel.title === "Email")?.details ?? "contact@tuskq.com";
   const location = contactChannels.find((channel) => channel.title === "Location")?.details ?? "Nepal";
 
   return (
@@ -21,10 +20,6 @@ export function SectionCta() {
             <div className="flex items-center gap-4">
               <span className="text-primary">✉</span>
               <span className="font-medium">{email}</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-primary">☎</span>
-              <span className="font-medium">{phone}</span>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-primary">⌂</span>

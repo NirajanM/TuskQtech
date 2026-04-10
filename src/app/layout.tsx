@@ -26,8 +26,8 @@ const themeInitScript = `
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "TuskQtech | Engineering Authority for the Digital Era",
-    template: "%s | TuskQtech",
+    default: "TuskQ | Engineering Authority for the Digital Era",
+    template: "%s | TuskQ",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "TuskQtech | Engineering Authority for the Digital Era",
+    title: "TuskQ | Engineering Authority for the Digital Era",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -50,19 +50,19 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech Home",
+        alt: "TuskQ Home",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TuskQtech | Engineering Authority for the Digital Era",
+    title: "TuskQ | Engineering Authority for the Digital Era",
     description: siteConfig.description,
     creator: siteConfig.creator,
     images: [absoluteUrl(siteConfig.ogImage)],
   },
   keywords: [
-    "TuskQtech",
+    "TuskQ",
     "software development",
     "technical education",
     "cybersecurity",

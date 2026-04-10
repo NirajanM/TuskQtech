@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/education"),
   },
   openGraph: {
-    title: "Education | TuskQtech",
+    title: "Education | TuskQ",
     description: "Learning tracks and execution process for technical growth.",
     url: absoluteUrl("/education"),
     type: "website",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech education",
+        alt: "TuskQ education",
       },
     ],
   },
@@ -36,6 +37,16 @@ export default function EducationPage() {
           <h1 className="section-title mb-16 text-5xl" data-reveal data-reveal-delay="1">
             Technical Learning Paths
           </h1>
+
+          <div className="mb-10 overflow-hidden rounded-xl bg-surface p-3" data-reveal data-reveal-delay="1">
+            <Image
+              src="/abstract-ribbon.svg"
+              alt="Abstract learning ribbon"
+              width={900}
+              height={620}
+              className="h-auto w-full rounded-lg"
+            />
+          </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {educationPageTracks.map((track, index) => (

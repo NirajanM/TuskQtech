@@ -19,7 +19,7 @@ export const philosophyContent = {
   eyebrow: "Our Philosophy",
   title: "Driven by Innovation. Defined by Excellence.",
   body:
-    "TuskQTech operates at the intersection of technical mastery and creative vision. We don't just build software; we engineer authority. Our team serves as a high-velocity extension of your business, delivering digital infrastructure that is as robust as it is intuitive.",
+    "TuskQ operates at the intersection of technical mastery and creative vision. We don't just build software; we engineer authority. Our team serves as a high-velocity extension of your business, delivering digital infrastructure that is as robust as it is intuitive.",
   stats: [
     { value: "120+", label: "Enterprise Solutions Delivered" },
     { value: "98%", label: "Client Retention Rate" },
@@ -125,26 +125,21 @@ export const roadmapContent = {
 };
 
 export const teamContent = {
-  title: "The Minds Behind TuskQTech",
-  subtitle: "A collective of engineers, designers, and strategists.",
+  title: "The Minds Behind TuskQ",
+  subtitle: "A collective of engineers, operators, and technical specialists.",
   members: [
-    { name: "Marcus Chen", role: "Chief Technical Architect" },
-    { name: "Elena Rodriguez", role: "Lead Product Designer" },
-    { name: "David Park", role: "Full Stack Lead" },
-    { name: "Sarah Jenkins", role: "Strategy Director" },
+    { name: "Rijan Koirala", role: "Network Engineer" },
+    { name: "Nirajan Malla", role: "Fullstack Engineer & DevOps" },
+    { name: "Samir Pokhrel", role: "Public Relations & Support" },
+    { name: "Nishanta Sharma Chapagain", role: "Electronics Engineer" },
   ],
 };
 
 export const contactChannels = [
   {
     title: "Email",
-    details: "contact@tuskqtech.com",
+    details: "contact@tuskq.com",
     note: "Project consultations, partnerships, and strategic inquiries.",
-  },
-  {
-    title: "Phone",
-    details: "+977 98000 00000",
-    note: "Mon-Fri, 9:00-18:00 NPT",
   },
   {
     title: "Location",

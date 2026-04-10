@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import { SectionCta } from "@/components/section-cta";
 import { SiteLayout } from "@/components/site-layout";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/services"),
   },
   openGraph: {
-    title: "Services | TuskQtech",
+    title: "Services | TuskQ",
     description: "Solutions that power your growth.",
     url: absoluteUrl("/services"),
     type: "website",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech services",
+        alt: "TuskQ services",
       },
     ],
   },
@@ -38,6 +39,16 @@ export default function ServicesPage() {
           <div className="mb-16" data-reveal data-reveal-delay="1">
             <h1 className="section-title text-5xl">Solutions That Power Your Growth</h1>
             <div className="mt-4 h-1 w-20 bg-primary" />
+          </div>
+
+          <div className="mb-10 overflow-hidden rounded-xl bg-surface-container p-3" data-reveal data-reveal-delay="1">
+            <Image
+              src="/abstract-grid.svg"
+              alt="Abstract engineering visual"
+              width={900}
+              height={620}
+              className="h-auto w-full rounded-lg"
+            />
           </div>
 
           {primaryService ? (

@@ -5,7 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms governing use of TuskQtech website and services.",
+  description: "Terms governing use of TuskQ website and services.",
   alternates: {
     canonical: absoluteUrl("/terms-of-service"),
   },
@@ -19,7 +19,7 @@ export default function TermsOfServicePage() {
           <h1 className="section-title mb-8 text-4xl md:text-5xl">Terms of Service</h1>
           <div className="space-y-6 text-sm leading-relaxed text-on-surface-variant md:text-base">
             <p>
-              These Terms of Service govern your use of the TuskQtech website and related services. By
+              These Terms of Service govern your use of the TuskQ website and related services. By
               accessing this website, you agree to these terms.
             </p>
             <p>
@@ -31,11 +31,11 @@ export default function TermsOfServicePage() {
               or violate applicable laws.
             </p>
             <p>
-              TuskQtech may update these terms at any time. Continued use of the website after updates
+              TuskQ may update these terms at any time. Continued use of the website after updates
               constitutes acceptance of the revised terms.
             </p>
             <p>
-              For questions regarding these terms, contact <strong>contact@tuskqtech.com</strong>.
+              For questions regarding these terms, contact <strong>contact@tuskq.com</strong>.
             </p>
           </div>
         </div>

@@ -16,13 +16,13 @@ import {
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "TuskQtech",
+  title: "TuskQ",
   description: "Engineering authority for the digital era.",
   alternates: {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "TuskQtech | Engineering Authority for the Digital Era",
+    title: "TuskQ | Engineering Authority for the Digital Era",
     description: "Engineering authority for the digital era.",
     url: absoluteUrl("/"),
     type: "website",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "TuskQtech Home",
+        alt: "TuskQ Home",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TuskQtech | Engineering Authority for the Digital Era",
+    title: "TuskQ | Engineering Authority for the Digital Era",
     description: "Engineering authority for the digital era.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
@@ -137,6 +137,14 @@ export default function HomePage() {
               <p className="font-medium italic">&ldquo;{philosophyContent.quote}&rdquo;</p>
               <p className="mt-4 text-sm opacity-80">{philosophyContent.quoteAuthor}</p>
             </div>
+
+            <Image
+              src="/abstract-ribbon.svg"
+              alt="Abstract decorative ribbon"
+              width={460}
+              height={320}
+              className="pointer-events-none absolute -right-10 -top-12 hidden h-auto w-72 opacity-35 mix-blend-screen lg:block"
+            />
           </div>
         </div>
       </section>
@@ -250,6 +258,16 @@ export default function HomePage() {
                 <p className="text-on-surface-variant">{item.description}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 overflow-hidden rounded-xl bg-surface-container p-3" data-reveal data-reveal-delay="2">
+            <Image
+              src="/abstract-grid.svg"
+              alt="Abstract technology grid"
+              width={900}
+              height={620}
+              className="h-auto w-full rounded-lg"
+            />
           </div>
         </div>
       </section>

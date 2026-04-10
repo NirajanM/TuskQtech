@@ -1,0 +1,33 @@
+<svg width="900" height="620" viewBox="0 0 900 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="40" y1="30" x2="860" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102A63" />
+      <stop offset="1" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A7C2FF" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="620" rx="24" fill="url(#g1)" />
+
+  <g opacity="0.42">
+    <path d="M120 0V620" stroke="url(#line)" stroke-width="1" />
+    <path d="M240 0V620" stroke="url(#line)" stroke-width="1" />
+    <path d="M360 0V620" stroke="url(#line)" stroke-width="1" />
+    <path d="M480 0V620" stroke="url(#line)" stroke-width="1" />
+    <path d="M600 0V620" stroke="url(#line)" stroke-width="1" />
+    <path d="M720 0V620" stroke="url(#line)" stroke-width="1" />
+
+    <path d="M0 120H900" stroke="url(#line)" stroke-width="1" />
+    <path d="M0 240H900" stroke="url(#line)" stroke-width="1" />
+    <path d="M0 360H900" stroke="url(#line)" stroke-width="1" />
+    <path d="M0 480H900" stroke="url(#line)" stroke-width="1" />
+  </g>
+
+  <path d="M120 492L290 322L430 396L622 218L780 286" stroke="#E7EEFF" stroke-opacity="0.7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="290" cy="322" r="9" fill="#EAF1FF" />
+  <circle cx="430" cy="396" r="8" fill="#D7E6FF" />
+  <circle cx="622" cy="218" r="9" fill="#EAF1FF" />
+</svg>

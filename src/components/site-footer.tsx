@@ -5,9 +5,9 @@ export function SiteFooter() {
     <footer className="w-full bg-surface-container px-8 py-12">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
         <div className="flex flex-col gap-2">
-          <span className="text-lg font-black text-on-surface">TuskQtech</span>
+          <span className="text-lg font-black text-on-surface">TuskQ</span>
           <p className="text-sm tracking-normal text-on-surface-variant">
-            © 2026 TuskQtech. Engineering Authority for the Digital Era.
+            © 2026 TuskQ. Engineering Authority for the Digital Era.
           </p>
         </div>
 
