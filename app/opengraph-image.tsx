@@ -31,6 +31,9 @@ export default function OpenGraphImage() {
           <div style={{ fontSize: 34, maxWidth: 860, color: "#e0edff" }}>
             Engineering the Future of Digital Innovation.
           </div>
+          <div style={{ fontSize: 26, maxWidth: 860, color: "#d2e3ff" }}>
+            {siteConfig.tagline}
+          </div>
         </div>
         <div
           style={{

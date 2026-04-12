@@ -27,6 +27,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | TuskQ",
+    description: "Solutions that power your growth.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function ServicesPage() {

@@ -27,6 +27,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Education | TuskQ",
+    description: "Learning tracks and execution process for technical growth.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function EducationPage() {
