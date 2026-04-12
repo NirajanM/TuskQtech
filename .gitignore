@@ -10,6 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 VERCEL.md
+docs/LOCAL_GITHUB_SETUP.md
 
 # testing
 /coverage
