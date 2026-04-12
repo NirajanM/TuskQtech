@@ -38,7 +38,7 @@ export const heroContent = {
 
 export const philosophyContent = {
   eyebrow: "Our Philosophy",
-  title: "Technology unified. Systems known. Quality assured.",
+  title: "Driven by Innovation. Defined by Excellence.",
   body: [
     "We started TUSKQ from one frustration. Too many businesses in Nepal were being let down by delivery teams. Projects dragged, budgets grew, and outcomes missed the brief.",
     "So we built a small team that owns the work end to end. We run our own infrastructure, control the stack, and solve hard problems directly instead of passing them to third parties.",
