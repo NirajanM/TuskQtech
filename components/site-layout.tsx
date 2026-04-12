@@ -14,7 +14,7 @@ export function SiteLayout({ children, headerCtaLabel }: SiteLayoutProps) {
     <div className="min-h-screen bg-surface text-on-surface">
       <ScrollEffects />
       <SiteHeader ctaLabel={headerCtaLabel} />
-      <main className="overflow-x-clip pt-20">{children}</main>
+      <main id="main-content" className="overflow-x-clip pt-20">{children}</main>
       <SiteFooter />
     </div>
   );

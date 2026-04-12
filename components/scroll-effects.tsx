@@ -25,10 +25,13 @@ function updateProgress() {
 
 export function ScrollEffects() {
   useEffect(() => {
+    const root = document.documentElement;
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.querySelectorAll<HTMLElement>(revealSelector).forEach((element) => {
         element.classList.add("is-visible");
       });
+      root.style.setProperty("--scroll-progress", "0");
       return;
     }
 
@@ -72,6 +75,7 @@ export function ScrollEffects() {
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", onScroll);
+      root.style.removeProperty("--scroll-progress");
     };
   }, []);
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { SiteLayout } from "@/components/site-layout";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, siteConfig, supportMailto } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -33,7 +33,11 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               You may request correction or deletion of your personal data by emailing
-              <strong> contact@tuskq.com</strong>. We retain data only for operational and legal
+              <strong>
+                {" "}
+                <a href={supportMailto("Privacy request")}>{siteConfig.supportEmail}</a>
+              </strong>
+              . We retain data only for operational and legal
               requirements.
             </p>
             <p>By using this site, you agree to this Privacy Policy.</p>

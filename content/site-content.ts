@@ -1,7 +1,15 @@
+import { siteConfig } from "@/lib/seo";
+
 export type NavItem = {
   label: string;
   href: string;
 };
+
+export const contactAnchorIds = {
+  projectBrief: "project-brief",
+  admissions: "admissions",
+  careerIntake: "career-intake",
+} as const;
 
 export const navItems: NavItem[] = [
   { label: "Services", href: "/services" },
@@ -126,19 +134,39 @@ export const roadmapContent = {
 
 export const teamContent = {
   title: "The Minds Behind TuskQ",
-  subtitle: "A collective of engineers, operators, and technical specialists.",
+  subtitle: "Leadership focused on innovation, execution, and sustainable growth.",
   members: [
-    { name: "Rijan Koirala", role: "Network Engineer" },
-    { name: "Nirajan Malla", role: "Fullstack Engineer & DevOps" },
-    { name: "Samir Pokhrel", role: "Public Relations & Support" },
-    { name: "Nishanta Sharma Chapagain", role: "Electronics Engineer" },
+    {
+      name: "Rijan Koirala",
+      role: "CEO — Chief Executive Officer",
+      bio: "Leads TuskQ's vision, strategy, and growth. Drives the mission of Innovate. Educate. Elevate. ensuring every project reflects the company's commitment to excellence.",
+      image: "/profiles/rijan-koirala.webp",
+    },
+    {
+      name: "Nirajan Malla",
+      role: "CTO — Chief Technology Officer",
+      bio: "Leads development and deployment - from database architecture to CI/CD pipelines. Sets engineering standards across all TuskQ products.",
+      image: "/profiles/nirajan-malla.webp",
+    },
+    {
+      name: "Samir Pokhrel",
+      role: "COO — Chief Operating Officer",
+      bio: "Keeps TuskQ running smoothly - from project delivery to client relationships. Ensures every engagement is on time, on budget, and exceeds expectations.",
+      image: "/profiles/samir-pokhrel.webp",
+    },
+    {
+      name: "Nishanta Sharma Chapagain",
+      role: "CMO — Chief Marketing Officer",
+      bio: "Shapes TuskQ's brand, voice, and market presence. Drives awareness, content strategy, and community growth across Nepal and beyond.",
+      image: "/profiles/nishanta-sharma-chapagain.webp",
+    },
   ],
 };
 
 export const contactChannels = [
   {
     title: "Email",
-    details: "contact@tuskq.com",
+    details: siteConfig.supportEmail,
     note: "Project consultations, partnerships, and strategic inquiries.",
   },
   {

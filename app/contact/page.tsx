@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { ContactBriefForm } from "@/components/contact-brief-form";
 import { ContactIntentForm } from "@/components/contact-intent-form";
 import { SiteLayout } from "@/components/site-layout";
-import { absoluteUrl, siteConfig } from "@/lib/seo";
+import { contactAnchorIds } from "@/content/site-content";
+import { absoluteUrl, siteConfig, supportMailto } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -25,13 +26,19 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | TuskQ",
+    description: "Let’s build the future together.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function ContactPage() {
   return (
     <SiteLayout headerCtaLabel="Contact Us">
-      <section className="bg-surface px-8 py-32">
-        <div className="mx-auto w-full max-w-[1400px] rounded-xl bg-surface-container p-12 md:p-20" data-reveal>
+      <section className="bg-surface px-5 py-32 sm:px-8">
+        <div className="mx-auto w-full max-w-[1400px] rounded-xl bg-surface-container p-8 md:p-14 lg:p-20" data-reveal>
           <div className="grid w-full grid-cols-1 gap-20 md:grid-cols-2">
             <div data-reveal data-reveal-delay="1">
               <h1 className="section-title mb-8 text-4xl md:text-5xl">Let’s Build the Future Together</h1>
@@ -43,7 +50,12 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <span className="text-primary">✉</span>
-                  <span className="font-medium">contact@tuskq.com</span>
+                  <a
+                    href={supportMailto("Project inquiry for TuskQ")}
+                    className="font-medium underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current"
+                  >
+                    {siteConfig.supportEmail}
+                  </a>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-primary">⌂</span>
@@ -52,13 +64,13 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div id="project-brief" data-reveal data-reveal-delay="2">
+            <div id={contactAnchorIds.projectBrief} data-reveal data-reveal-delay="2">
               <ContactBriefForm />
             </div>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div id="admissions" className="lift-card rounded-xl bg-surface p-8" data-reveal data-reveal-delay="1">
+            <div id={contactAnchorIds.admissions} className="lift-card rounded-xl bg-surface p-8" data-reveal data-reveal-delay="1">
               <h2 className="mb-3 text-2xl font-bold">Admissions</h2>
               <p className="mb-6 text-sm text-on-surface-variant">
                 Share your background and goals to join a suitable learning track.
@@ -72,7 +84,7 @@ export default function ContactPage() {
               />
             </div>
 
-            <div id="career-intake" className="lift-card rounded-xl bg-surface p-8" data-reveal data-reveal-delay="2">
+            <div id={contactAnchorIds.careerIntake} className="lift-card rounded-xl bg-surface p-8" data-reveal data-reveal-delay="2">
               <h2 className="mb-3 text-2xl font-bold">Career Intake</h2>
               <p className="mb-6 text-sm text-on-surface-variant">
                 Submit your role and experience if you want to collaborate with our team.

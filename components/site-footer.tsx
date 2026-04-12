@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { siteConfig, supportMailto } from "@/lib/seo";
+
 export function SiteFooter() {
   return (
     <footer className="w-full bg-surface-container px-8 py-12">
@@ -9,6 +11,12 @@ export function SiteFooter() {
           <p className="text-sm tracking-normal text-on-surface-variant">
             © 2026 TuskQ. Engineering Authority for the Digital Era.
           </p>
+          <a
+            href={supportMailto("General inquiry for TuskQ")}
+            className="text-sm tracking-normal text-on-surface-variant underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current"
+          >
+            {siteConfig.supportEmail}
+          </a>
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 text-sm tracking-normal">

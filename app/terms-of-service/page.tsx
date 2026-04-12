@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { SiteLayout } from "@/components/site-layout";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, siteConfig, supportMailto } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -35,7 +35,11 @@ export default function TermsOfServicePage() {
               constitutes acceptance of the revised terms.
             </p>
             <p>
-              For questions regarding these terms, contact <strong>contact@tuskq.com</strong>.
+              For questions regarding these terms, contact{" "}
+              <strong>
+                <a href={supportMailto("Terms of service question")}>{siteConfig.supportEmail}</a>
+              </strong>
+              .
             </p>
           </div>
         </div>

@@ -85,6 +85,10 @@ body {
   max-width: 100vw;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--surface);
@@ -141,6 +145,14 @@ a {
   color: var(--on-secondary);
 }
 
+.mobile-menu {
+  color: var(--on-surface);
+}
+
+.mobile-menu .nav-link {
+  color: var(--on-surface);
+}
+
 [data-theme="dark"] .site-nav {
   background: linear-gradient(
     112deg,
@@ -168,6 +180,10 @@ a {
 [data-theme="dark"] .site-nav .btn-primary {
   background: var(--primary);
   color: var(--on-primary);
+}
+
+[data-theme="dark"] .mobile-menu {
+  color: var(--on-surface);
 }
 
 .hero-overlay {
@@ -325,21 +341,38 @@ a {
 
 .form-input {
   width: 100%;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0.5rem;
   padding: 1rem;
   background: var(--surface-container-high);
   color: var(--on-surface);
   outline: none;
-  transition: box-shadow 200ms ease;
+  transition: box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
 }
 
 .form-input:focus {
-  box-shadow: 0 0 0 2px var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent);
+  background: color-mix(in srgb, var(--surface-container-high) 82%, var(--surface));
 }
 
 .form-input::placeholder {
   color: var(--on-surface-variant);
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: color-mix(in srgb, var(--danger) 72%, transparent);
+}
+
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

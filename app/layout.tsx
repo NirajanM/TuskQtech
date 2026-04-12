@@ -54,6 +54,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: [{ url: "/icon" }],
+    shortcut: [{ url: "/icon" }],
+    apple: [{ url: "/icon" }],
+  },
   twitter: {
     card: "summary_large_image",
     title: "TuskQ | Engineering Authority for the Digital Era",
@@ -80,6 +85,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -91,6 +99,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${manrope.variable} h-full antialiased`}
     >

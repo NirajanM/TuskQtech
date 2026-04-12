@@ -74,7 +74,6 @@ export default function HomePage() {
 
   const aboutImageSrc = "/stitch/image-03.png";
   const portfolioImageSrc = ["/stitch/image-04.png", "/stitch/image-05.png"] as const;
-  const teamImageSrc = ["/stitch/image-06.png", "/stitch/image-07.png", "/stitch/image-08.png", "/stitch/image-09.png"] as const;
 
   return (
     <SiteLayout>
@@ -90,7 +89,7 @@ export default function HomePage() {
               {heroContent.subtitle}
             </p>
             <div className="flex gap-4" data-reveal data-reveal-delay="2">
-              <Link href="/contact" className="btn-primary px-8 py-4 text-base">
+              <Link href="/contact#project-brief" className="btn-primary px-8 py-4 text-base">
                 Start Your Project
               </Link>
               <Link href="/services" className="btn-secondary px-8 py-4 text-base">
@@ -303,20 +302,22 @@ export default function HomePage() {
             <p className="text-on-surface-variant">{teamContent.subtitle}</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
             {teamContent.members.map((member, index) => (
               <div key={member.name} className="group" data-reveal data-reveal-delay={String((index % 3) + 1)}>
                 <div className="lift-card mb-4 aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
                   <Image
-                    src={teamImageSrc[index]}
+                    src={member.image}
                     alt={member.name}
-                    width={512}
-                    height={512}
-                    className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    width={360}
+                    height={480}
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                    className="h-full w-full object-cover transition-all duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
                 <h4 className="font-bold">{member.name}</h4>
                 <p className="text-sm text-on-surface-variant">{member.role}</p>
+                <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">{member.bio}</p>
               </div>
             ))}
           </div>

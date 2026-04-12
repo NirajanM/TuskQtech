@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 import { contactChannels } from "@/content/site-content";
+import { supportMailto } from "@/lib/seo";
 
 export function SectionCta() {
-  const email = contactChannels.find((channel) => channel.title === "Email")?.details ?? "contact@tuskq.com";
+  const email = contactChannels.find((channel) => channel.title === "Email")?.details ?? "support@tuskq.com";
   const location = contactChannels.find((channel) => channel.title === "Location")?.details ?? "Nepal";
 
   return (
@@ -19,7 +20,9 @@ export function SectionCta() {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <span className="text-primary">✉</span>
-              <span className="font-medium">{email}</span>
+              <a href={supportMailto("Project inquiry for TuskQ")} className="font-medium underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">
+                {email}
+              </a>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-primary">⌂</span>
