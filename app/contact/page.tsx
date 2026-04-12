@@ -3,18 +3,18 @@ import type { Metadata } from "next";
 import { ContactBriefForm } from "@/components/contact-brief-form";
 import { ContactIntentForm } from "@/components/contact-intent-form";
 import { SiteLayout } from "@/components/site-layout";
-import { contactAnchorIds } from "@/content/site-content";
+import { contactAnchorIds, finalCtaContent } from "@/content/site-content";
 import { absoluteUrl, siteConfig, supportMailto } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Let’s build the future together.",
+  description: "Talk with TUSKQ about your project, product, or infrastructure needs.",
   alternates: {
     canonical: absoluteUrl("/contact"),
   },
   openGraph: {
     title: "Contact | TuskQ",
-    description: "Let’s build the future together.",
+    description: "Talk with TUSKQ about your project, product, or infrastructure needs.",
     url: absoluteUrl("/contact"),
     type: "website",
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact | TuskQ",
-    description: "Let’s build the future together.",
+    description: "Talk with TUSKQ about your project, product, or infrastructure needs.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
 };
@@ -41,10 +41,9 @@ export default function ContactPage() {
         <div className="mx-auto w-full max-w-[1400px] rounded-xl bg-surface-container p-8 md:p-14 lg:p-20" data-reveal>
           <div className="grid w-full grid-cols-1 gap-20 md:grid-cols-2">
             <div data-reveal data-reveal-delay="1">
-              <h1 className="section-title mb-8 text-4xl md:text-5xl">Let’s Build the Future Together</h1>
-              <p className="mb-12 max-w-[52ch] text-lg text-on-surface-variant">
-                Ready to elevate your digital presence? Our experts are standing by to architect your next
-                breakthrough.
+              <h1 className="section-title mb-8 text-4xl md:text-5xl">{finalCtaContent.title}</h1>
+              <p className="copy-flow mb-12 max-w-[52ch] text-lg text-on-surface-variant">
+                {finalCtaContent.body}
               </p>
 
               <div className="space-y-6">
@@ -59,8 +58,9 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-primary">⌂</span>
-                  <span className="font-medium">Nepal</span>
+                  <span className="font-medium">{siteConfig.location}</span>
                 </div>
+                <p className="text-sm font-semibold tracking-wide text-on-surface-variant">{finalCtaContent.tagline}</p>
               </div>
             </div>
 

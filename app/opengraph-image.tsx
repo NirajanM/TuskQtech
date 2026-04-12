@@ -24,12 +24,12 @@ export default function OpenGraphImage() {
           color: "#ffffff",
           fontFamily: "Manrope, sans-serif",
         }}
-      >
-        <div style={{ fontSize: 24, letterSpacing: 4, color: "#d6e2ff" }}>ENGINEERING AUTHORITY</div>
+        >
+        <div style={{ fontSize: 24, letterSpacing: 4, color: "#d6e2ff" }}>DIGITAL PRODUCT ENGINEERING</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>TUSKQ</div>
           <div style={{ fontSize: 34, maxWidth: 860, color: "#e0edff" }}>
-            Engineering the Future of Digital Innovation.
+            Some ideas deserve more than a good start.
           </div>
           <div style={{ fontSize: 26, maxWidth: 860, color: "#d2e3ff" }}>
             {siteConfig.tagline}

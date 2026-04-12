@@ -9,13 +9,13 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Education",
-  description: "Learning tracks and execution process for technical growth.",
+  description: "Technical learning paths that reflect real product delivery standards.",
   alternates: {
     canonical: absoluteUrl("/education"),
   },
   openGraph: {
     title: "Education | TuskQ",
-    description: "Learning tracks and execution process for technical growth.",
+    description: "Technical learning paths that reflect real product delivery standards.",
     url: absoluteUrl("/education"),
     type: "website",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Education | TuskQ",
-    description: "Learning tracks and execution process for technical growth.",
+    description: "Technical learning paths that reflect real product delivery standards.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
 };
@@ -63,7 +63,7 @@ export default function EducationPage() {
                 className="lift-card rounded-xl bg-surface p-8"
               >
                 <h2 className="mb-3 text-xl font-bold">{track.title}</h2>
-                <p className="text-sm leading-relaxed text-on-surface-variant">{track.description}</p>
+                <p className="copy-flow text-sm leading-relaxed text-on-surface-variant">{track.description}</p>
               </article>
             ))}
           </div>
@@ -97,7 +97,7 @@ export default function EducationPage() {
                   {step.number}
                 </div>
                 <h4 className="mb-2 font-bold">{step.title}</h4>
-                <p className="text-sm text-on-surface-variant">{step.description}</p>
+                <p className="copy-flow text-sm text-on-surface-variant">{step.description}</p>
               </div>
             ))}
           </div>

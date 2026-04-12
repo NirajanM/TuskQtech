@@ -26,7 +26,7 @@ const themeInitScript = `
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "TuskQ | Engineering Authority for the Digital Era",
+    default: siteConfig.defaultTitle,
     template: "%s | TuskQ",
   },
   description: siteConfig.description,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "TuskQ | Engineering Authority for the Digital Era",
+    title: siteConfig.defaultTitle,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -61,18 +61,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TuskQ | Engineering Authority for the Digital Era",
+    title: siteConfig.defaultTitle,
     description: siteConfig.description,
     creator: siteConfig.creator,
     images: [absoluteUrl(siteConfig.ogImage)],
   },
   keywords: [
     "TuskQ",
-    "software development",
-    "technical education",
-    "cybersecurity",
-    "Next.js agency",
-    "bootcamp",
+    "digital product development Nepal",
+    "web app development Nepal",
+    "mobile app development Nepal",
+    "UI UX design Nepal",
+    "cloud infrastructure Nepal",
+    "DevOps services Nepal",
+    "custom software development",
   ],
   robots: {
     index: true,

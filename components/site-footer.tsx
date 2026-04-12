@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-2">
           <span className="text-lg font-black text-on-surface">TuskQ</span>
           <p className="text-sm tracking-normal text-on-surface-variant">
-            © 2026 TuskQ. Engineering Authority for the Digital Era.
+            © 2026 TUSKQ. {siteConfig.tagline}
           </p>
           <a
             href={supportMailto("General inquiry for TuskQ")}

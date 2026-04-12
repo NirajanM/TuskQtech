@@ -286,6 +286,38 @@ a {
   line-height: 1.1;
 }
 
+.copy-flow {
+  text-wrap: pretty;
+}
+
+@media (min-width: 768px) {
+  .copy-flow {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
+
+.team-card .team-portrait {
+  filter: grayscale(1) saturate(0.15) contrast(1.06);
+  transition: filter 360ms ease, transform 520ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.team-card .team-glow {
+  opacity: 0;
+  transition: opacity 320ms ease;
+}
+
+.team-card:hover .team-portrait,
+.team-card:focus-within .team-portrait {
+  filter: grayscale(0) saturate(1) contrast(1);
+  transform: scale(1.05);
+}
+
+.team-card:hover .team-glow,
+.team-card:focus-within .team-glow {
+  opacity: 1;
+}
+
 .lift-card {
   transition: transform 320ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 320ms ease;
 }

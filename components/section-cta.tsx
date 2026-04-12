@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { contactChannels } from "@/content/site-content";
+import { contactChannels, finalCtaContent } from "@/content/site-content";
 import { supportMailto } from "@/lib/seo";
 
 export function SectionCta() {
@@ -11,10 +11,9 @@ export function SectionCta() {
     <section className="bg-surface px-8 py-32" data-reveal>
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-20 rounded-xl bg-surface-container p-12 md:grid-cols-2 md:p-20">
         <div data-reveal data-reveal-delay="1">
-          <h2 className="section-title mb-8 text-4xl md:text-5xl">Let’s Build the Future Together</h2>
-          <p className="mb-12 max-w-[52ch] text-lg text-on-surface-variant">
-            Ready to elevate your digital presence? Our experts are standing by to architect your next
-            breakthrough.
+          <h2 className="section-title mb-8 text-4xl md:text-5xl">{finalCtaContent.title}</h2>
+          <p className="copy-flow mb-12 max-w-[52ch] text-lg text-on-surface-variant">
+            {finalCtaContent.body}
           </p>
 
           <div className="space-y-6">
@@ -28,20 +27,21 @@ export function SectionCta() {
               <span className="text-primary">⌂</span>
               <span className="font-medium">{location}</span>
             </div>
+            <p className="text-sm font-semibold tracking-wide text-on-surface-variant">{finalCtaContent.tagline}</p>
           </div>
         </div>
 
         <div className="space-y-5" data-reveal data-reveal-delay="2">
-          <p className="text-sm leading-relaxed text-on-surface-variant">
+          <p className="copy-flow text-sm leading-relaxed text-on-surface-variant">
             Share your requirements through the dedicated page so submissions are tracked and routed
             correctly.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/contact#project-brief" className="btn-primary px-6 py-3 text-sm">
-              Project Brief
+            <Link href={finalCtaContent.primaryAction.href} className="btn-primary px-6 py-3 text-sm">
+              {finalCtaContent.primaryAction.label}
             </Link>
-            <Link href="/contact#admissions" className="btn-secondary px-6 py-3 text-sm">
-              Admissions
+            <Link href={finalCtaContent.secondaryAction.href} className="btn-secondary px-6 py-3 text-sm">
+              {finalCtaContent.secondaryAction.label}
             </Link>
             <Link href="/contact#career-intake" className="btn-secondary px-6 py-3 text-sm">
               Career Intake

@@ -9,13 +9,13 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Solutions that power your growth.",
+  description: "Web, app, design, DevOps, and infrastructure services built for long-term product success.",
   alternates: {
     canonical: absoluteUrl("/services"),
   },
   openGraph: {
     title: "Services | TuskQ",
-    description: "Solutions that power your growth.",
+    description: "Web, app, design, DevOps, and infrastructure services built for long-term product success.",
     url: absoluteUrl("/services"),
     type: "website",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Services | TuskQ",
-    description: "Solutions that power your growth.",
+    description: "Web, app, design, DevOps, and infrastructure services built for long-term product success.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
 };
@@ -70,7 +70,7 @@ export default function ServicesPage() {
                 </svg>
               </div>
               <h2 className="mb-4 text-3xl font-black md:text-4xl">{primaryService.title}</h2>
-              <p className="mb-6 max-w-3xl text-on-primary/90">{primaryService.description}</p>
+              <p className="copy-flow mb-6 max-w-3xl text-on-primary/90">{primaryService.description}</p>
               <div className="grid gap-2 md:grid-cols-2">
                 {primaryService.points.map((point) => (
                   <p key={point} className="text-sm text-on-primary/90">
@@ -90,7 +90,7 @@ export default function ServicesPage() {
                 className={`lift-card rounded-xl p-10 ${index % 2 === 0 ? "bg-surface-container" : "bg-surface-container-low"}`}
               >
                 <h2 className="mb-4 text-2xl font-bold md:text-3xl">{service.title}</h2>
-                <p className="mb-6 leading-relaxed text-on-surface-variant">{service.description}</p>
+                <p className="copy-flow mb-6 leading-relaxed text-on-surface-variant">{service.description}</p>
                 <ul className="space-y-2 text-sm text-on-surface-variant">
                   {service.points.map((point) => (
                     <li key={point}>• {point}</li>

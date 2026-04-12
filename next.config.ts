@@ -1,15 +1,20 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === "production";
+
+const scriptSources = ["'self'", "'unsafe-inline'", ...(isProduction ? [] : ["'unsafe-eval'"])].join(" ");
+const connectSources = ["'self'", "https://discord.com", ...(isProduction ? [] : ["ws:", "http://localhost:*"])].join(" ");
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
   "img-src 'self' data: https://lh3.googleusercontent.com https://contribution.usercontent.google.com",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src ${scriptSources}`,
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' https://fonts.gstatic.com",
-  "connect-src 'self' https://discord.com",
+  `connect-src ${connectSources}`,
   "object-src 'none'",
 ].join("; ");
 
